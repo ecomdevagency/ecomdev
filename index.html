@@ -907,7 +907,7 @@
   </div>
 </footer>
 <!-- BottomNavBar (Mobile Only, From JSON) -->
-<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 backdrop-blur-lg border-t border-white/5 shadow-2xl flex justify-around items-center px-4 pb-safe h-20">
+<nav id="mobile-bottom-nav" class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 backdrop-blur-lg border-t border-white/5 shadow-2xl flex justify-around items-center px-4 pb-safe h-20">
 <!-- Active Tab: Builds (closest match to primary intent of Home/Work) -->
 <a class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-4 py-2 scale-90 duration-150 ease-out hover:text-primary-fixed-dim transition-all" href="#works">
 <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">code</span>
@@ -1066,6 +1066,51 @@ function showStatus(text, colorClass) {
     formStatus.textContent = text;
     formStatus.className = `text-[12px] font-label-sm uppercase tracking-wider mt-2 transition-all duration-300 ${colorClass}`;
     formStatus.classList.remove('hidden');
+}
+
+// Bottom Nav Highlighting Logic
+const bottomNav = document.getElementById('mobile-bottom-nav');
+if (bottomNav) {
+    const navLinks = bottomNav.querySelectorAll('a');
+    
+    function highlightLink(targetLink) {
+        navLinks.forEach(item => {
+            item.classList.remove('text-primary', 'bg-primary/10', 'rounded-xl', 'scale-90', 'duration-150', 'ease-out');
+            item.classList.add('text-on-surface-variant');
+            const icon = item.querySelector('span.material-symbols-outlined');
+            if (icon) {
+                icon.removeAttribute('style');
+            }
+        });
+        
+        if (targetLink) {
+            targetLink.classList.remove('text-on-surface-variant');
+            targetLink.classList.add('text-primary', 'bg-primary/10', 'rounded-xl', 'scale-90', 'duration-150', 'ease-out');
+            const icon = targetLink.querySelector('span.material-symbols-outlined');
+            if (icon) {
+                icon.style.fontVariationSettings = "'FILL' 1";
+            }
+        }
+    }
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            highlightLink(this);
+        });
+    });
+    
+    // Set initial active link based on current hash, default to first link
+    const currentHash = window.location.hash;
+    if (currentHash) {
+        const matchingLink = Array.from(navLinks).find(link => link.getAttribute('href') === currentHash);
+        if (matchingLink) {
+            highlightLink(matchingLink);
+        } else {
+            highlightLink(navLinks[0]);
+        }
+    } else {
+        highlightLink(navLinks[0]);
+    }
 }
 </script>
 </body></html>
