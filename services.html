@@ -1,0 +1,264 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>{ ecomdev } | Services — End-to-End Commerce Solutions</title>
+<meta name="description" content="Full-service Shopify agency offering custom development, logistics integration, finance & payment systems, growth automation, and SEO performance.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = { darkMode:"class", theme:{ extend:{ colors:{ "outline":"#8b90a0","inverse-on-surface":"#313030","tertiary-fixed-dim":"#48ddbc","on-background":"#e5e2e1","surface-container-lowest":"#0e0e0e","on-tertiary-container":"#ffffff","inverse-primary":"#0059c5","surface":"#131313","on-surface-variant":"#c1c6d7","tertiary":"#48ddbc","inverse-surface":"#e5e2e1","primary-container":"#0070f3","surface-bright":"#3a3939","on-secondary":"#470083","primary":"#aec6ff","outline-variant":"#414754","surface-tint":"#aec6ff","on-primary":"#002e6b","secondary":"#dbb8ff","tertiary-container":"#00866f","surface-container-highest":"#353534","surface-container":"#201f1f","background":"#131313","on-tertiary":"#00382d","on-secondary-container":"#d0a6ff","tertiary-fixed":"#6bfad8","secondary-container":"#6807ba","on-surface":"#e5e2e1","surface-dim":"#131313","secondary-fixed-dim":"#dbb8ff","error":"#ffb4ab","surface-container-low":"#1c1b1b","surface-variant":"#353534","primary-fixed-dim":"#aec6ff","on-primary-container":"#ffffff","on-primary-fixed-variant":"#004397","surface-container-high":"#2a2a2a" }, borderRadius:{ DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px" }, fontFamily:{ "body-lg":["Inter"],"display-lg":["Space Grotesk"],"display-2xl":["Space Grotesk"],"display-lg-mobile":["Space Grotesk"],"body-md":["Inter"],"label-sm":["JetBrains Mono"],"headline-md":["Space Grotesk"] }, fontSize:{ "body-lg":["18px",{lineHeight:"1.6",letterSpacing:"0",fontWeight:"400"}],"display-lg":["64px",{lineHeight:"1.1",letterSpacing:"-0.03em",fontWeight:"600"}],"display-2xl":["96px",{lineHeight:"1.1",letterSpacing:"-0.04em",fontWeight:"700"}],"display-lg-mobile":["40px",{lineHeight:"1.2",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["16px",{lineHeight:"1.6",letterSpacing:"0",fontWeight:"400"}],"label-sm":["12px",{lineHeight:"1.2",letterSpacing:"0.1em",fontWeight:"500"}],"headline-md":["32px",{lineHeight:"1.3",letterSpacing:"-0.01em",fontWeight:"500"}] } } } }
+</script>
+<style>
+  html{scroll-behavior:smooth}body{background-color:#131313;color:#e5e2e1;overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:max(884px,100dvh)}
+  .glass-panel{background:rgba(18,18,18,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.05)}
+  .gradient-border-hover{position:relative;transition:all 0.3s ease}
+  .gradient-border-hover::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.05) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;transition:background 0.3s ease,box-shadow 0.3s ease;pointer-events:none}
+  .gradient-border-hover:hover::before{background:#0070f3;box-shadow:0 0 8px rgba(0,112,243,0.4)}
+  .grid-bg{background-image:linear-gradient(to right,rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(circle at center,black 40%,transparent 80%);-webkit-mask-image:radial-gradient(circle at center,black 40%,transparent 80%)}
+  .glow-primary{position:absolute;width:40vw;height:40vw;background:radial-gradient(circle,rgba(0,112,243,0.15) 0%,transparent 70%);filter:blur(60px);border-radius:50%;z-index:0;pointer-events:none}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  .service-card{background:rgba(18,18,18,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.05);border-radius:1rem;padding:2.5rem;transition:all 0.4s ease;position:relative;overflow:hidden}
+  .service-card:hover{border-color:rgba(0,112,243,0.25);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.4)}
+  .service-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,112,243,0.03) 0%,transparent 50%);opacity:0;transition:opacity 0.4s ease;pointer-events:none;border-radius:inherit}
+  .service-card:hover::after{opacity:1}
+  .feature-check{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+  .feature-check::before{content:'✓';color:#48ddbc;font-weight:700;font-size:14px;margin-top:2px;flex-shrink:0}
+  .platform-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9999px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#c1c6d7;letter-spacing:0.05em}
+</style>
+</head>
+<body id="top" class="font-body-md text-body-md antialiased pb-24 md:pb-0">
+
+<!-- Desktop Header -->
+<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 h-20">
+  <div class="max-w-7xl w-full mx-auto px-8 flex items-center justify-between">
+    <a href="index.html"><svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-14 w-[187px]"><text x="200" y="60" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="48" letter-spacing="-0.04em"><tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan></text></svg></a>
+    <nav class="flex items-center gap-8">
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="index.html">Home</a>
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+      <a class="text-primary font-bold font-label-sm text-label-sm uppercase tracking-wider" href="services.html">Services</a>
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="process.html">Process</a>
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="px-5 py-2.5 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:bg-inverse-primary transition-all duration-300 font-bold uppercase tracking-wider">Get a Quote</a>
+  </div>
+</header>
+<header class="md:hidden flex fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-white/5 items-center justify-center h-16">
+  <a href="index.html"><svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-14 w-[187px]"><text x="200" y="60" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="48" letter-spacing="-0.04em"><tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan></text></svg></a>
+</header>
+
+<main class="relative z-10 pt-20 md:pt-32 overflow-x-hidden">
+<div class="fixed inset-0 grid-bg z-0 pointer-events-none"></div>
+<div class="glow-primary top-[-10%] left-[-10%]"></div>
+<div class="glow-primary bottom-[30%] right-[-10%] opacity-50"></div><!-- Hero -->
+<section class="relative px-5 md:px-8 max-w-7xl mx-auto py-10 md:py-24 z-10 text-center">
+  <p class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.25em] mb-4">Our Services</p>
+  <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-6">
+    High-Performance<br>
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-tertiary">Shopify Storefronts</span>
+  </h1>
+  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Consolidated solutions for ambitious e-commerce brands. We design, code, migrate, and optimize your entire Shopify operation.</p>
+</section>
+
+<!-- ═══════ SERVICE 1: Core Shopify Development & Migrations ══ -->
+<section id="shopify" class="relative px-6 md:px-8 max-w-7xl mx-auto py-12 z-10">
+  <div class="service-card reveal">
+    <div class="absolute right-6 top-6 opacity-8 pointer-events-none"><span class="material-symbols-outlined text-[100px] text-primary-container" style="opacity:0.08;">storefront</span></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-container/10 border border-primary-container/25 rounded-full mb-5">
+          <span class="material-symbols-outlined text-primary-container text-[16px]" style="font-variation-settings:'FILL' 1;">storefront</span>
+          <span class="font-label-sm text-[10px] text-primary-container uppercase tracking-widest">Core Service</span>
+        </div>
+        <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-4">Shopify Theme Development & Migrations</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">We construct custom, lightweight Shopify OS 2.0 themes that represent your brand and convert customers. If you're currently on WooCommerce, Magento, or custom code, we handle your migration with zero data loss and strict SEO safeguards.</p>
+        <div class="space-y-2">
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant">Custom OS 2.0 theme design and Liquid templating</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant">Seamless migration of products, customers, and order history</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant">Metafields and Metaobjects for advanced merchandising rules</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant">Shopify Markets setup for multi-currency and international expansion</span></div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div class="glass-panel rounded-xl p-5 border border-white/5">
+          <p class="font-label-sm text-[10px] text-primary-container uppercase tracking-widest mb-3">Tech Stack</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="platform-badge">Shopify OS 2.0</span>
+            <span class="platform-badge">Liquid</span>
+            <span class="platform-badge">Alpine.js</span>
+            <span class="platform-badge">Tailwind CSS</span>
+            <span class="platform-badge">Metafields</span>
+            <span class="platform-badge">Shopify Markets</span>
+          </div>
+        </div>
+        <div class="glass-panel rounded-xl p-5 border border-white/5">
+          <p class="font-label-sm text-[10px] text-primary-container uppercase tracking-widest mb-3">Deliverables</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="text-center p-3 bg-surface-container rounded-lg"><p class="font-display-lg-mobile text-[28px] font-bold text-primary-container">95+</p><p class="font-label-sm text-[9px] text-on-surface-variant uppercase tracking-widest mt-1">PageSpeed Target</p></div>
+            <div class="text-center p-3 bg-surface-container rounded-lg"><p class="font-display-lg-mobile text-[28px] font-bold text-tertiary">0</p><p class="font-label-sm text-[9px] text-on-surface-variant uppercase tracking-widest mt-1">SEO Data Loss</p></div>
+            <div class="text-center p-3 bg-surface-container rounded-lg"><p class="font-display-lg-mobile text-[28px] font-bold text-secondary">Clean</p><p class="font-label-sm text-[9px] text-on-surface-variant uppercase tracking-widest mt-1">Liquid Markup</p></div>
+            <div class="text-center p-3 bg-surface-container rounded-lg"><p class="font-display-lg-mobile text-[28px] font-bold text-primary">Responsive</p><p class="font-label-sm text-[9px] text-on-surface-variant uppercase tracking-widest mt-1">Mobile-First UI</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SERVICE 2: Headless Commerce ══ -->
+<section id="headless" class="relative px-6 md:px-8 max-w-7xl mx-auto py-6 z-10">
+  <div class="service-card reveal">
+    <div class="absolute right-6 top-6 opacity-8 pointer-events-none"><span class="material-symbols-outlined text-[100px] text-primary-container" style="opacity:0.08;">code</span></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div class="order-2 md:order-1 flex flex-col gap-4">
+        <div class="glass-panel rounded-xl p-5 border border-white/5">
+          <p class="font-label-sm text-[10px] uppercase tracking-widest mb-3" style="color:#7928CA">Headless Stack</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="platform-badge">Next.js 14</span>
+            <span class="platform-badge">Hydrogen 2.0</span>
+            <span class="platform-badge">Storefront API</span>
+            <span class="platform-badge">Vercel Edge</span>
+            <span class="platform-badge">React</span>
+            <span class="platform-badge">TypeScript</span>
+          </div>
+        </div>
+        <div class="glass-panel rounded-xl p-5 border border-white/5">
+          <p class="font-label-sm text-[10px] uppercase tracking-widest mb-3" style="color:#7928CA">Performance Indicators</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="text-center p-3 bg-surface-container rounded-lg"><p class="font-display-lg-mobile text-[28px] font-bold" style="color:#7928CA">&lt;100ms</p><p class="font-label-sm text-[9px] text-on-surface-variant uppercase tracking-widest mt-1">Server Response</p></div>
+            <div class="text-center p-3 bg-surface-container rounded-lg"><p class="font-display-lg-mobile text-[28px] font-bold text-tertiary">Instant</p><p class="font-label-sm text-[9px] text-on-surface-variant uppercase tracking-widest mt-1">Page Transitions</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5" style="background:rgba(121,40,202,0.1);border:1px solid rgba(121,40,202,0.25)">
+          <span class="material-symbols-outlined text-[16px]" style="color:#7928CA;font-variation-settings:'FILL' 1;">code</span>
+          <span class="font-label-sm text-[10px] uppercase tracking-widest" style="color:#7928CA">Advanced</span>
+        </div>
+        <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-4">Headless Commerce Storefronts</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">For brands seeking complete visual freedom and top-tier page speed, we engineer headless storefronts using Next.js or Shopify Hydrogen. By separation of concerns, your backend runs on Shopify while the frontend runs at the edge.</p>
+        <div class="space-y-2">
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant">Bespoke React/TypeScript layouts decoupled from themes</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant">Hydrogen 2.0 streaming SSR for lightning-fast catalog browsing</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant">Seamless integration with headless CMS platforms (Sanity, Contentful)</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant">Edge server response times under 100ms globally</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SERVICE 3: Shopify Systems & Conversion Optimization ══ -->
+<section id="integrations" class="relative px-6 md:px-8 max-w-7xl mx-auto py-12 z-10 mb-8">
+  <div class="service-card reveal" style="border-color:rgba(72,221,188,0.12);">
+    <div class="absolute right-6 top-6 opacity-8 pointer-events-none"><span class="material-symbols-outlined text-[100px] text-tertiary" style="opacity:0.06;">sync_alt</span></div>
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6 bg-tertiary/10 border border-tertiary/25">
+      <span class="material-symbols-outlined text-[16px] text-tertiary" style="font-variation-settings:'FILL' 1;">sync_alt</span>
+      <span class="font-label-sm text-[10px] text-tertiary uppercase tracking-widest">Integrations & Optimization</span>
+    </div>
+    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-4">Shopify Systems & Conversion Optimization</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-3xl leading-relaxed">We connect your store to your logistics networks, payment gateways, and retention software, then tune the code for conversion rate optimization. Your physical inventory and digital operations stay in perfect sync.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-surface-container-low rounded-xl p-6 border border-white/5">
+        <span class="material-symbols-outlined text-[28px] mb-3 block text-tertiary" style="font-variation-settings:'FILL' 1;">local_shipping</span>
+        <h3 class="font-headline-md text-[18px] text-on-surface mb-3">Logistics & 3PL Setup</h3>
+        <div class="space-y-2">
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant text-sm">3PL sync (ShipBob, ShipStation)</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant text-sm">Multi-warehouse order routing rules</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant text-sm">Branded returns portal (Loop Returns)</span></div>
+        </div>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 border border-white/5">
+        <span class="material-symbols-outlined text-[28px] mb-3 block text-tertiary" style="font-variation-settings:'FILL' 1;">credit_score</span>
+        <h3 class="font-headline-md text-[18px] text-on-surface mb-3">Payments, BNPL & Taxes</h3>
+        <div class="space-y-2">
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant text-sm">BNPL setup (Klarna, Afterpay, Tabby)</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant text-sm">Tax automation (TaxJar, Avalara)</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant text-sm">Shop Pay optimized checkout flow</span></div>
+        </div>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 border border-white/5">
+        <span class="material-symbols-outlined text-[28px] mb-3 block text-tertiary" style="font-variation-settings:'FILL' 1;">trending_up</span>
+        <h3 class="font-headline-md text-[18px] text-on-surface mb-3">Growth & Retention</h3>
+        <div class="space-y-2">
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant text-sm">Klaviyo email/SMS automation flows</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant text-sm">Skio / ReCharge subscription setup</span></div>
+          <div class="feature-check"><span class="font-body-md text-body-md text-on-surface-variant text-sm">Loyalty tier platforms & upsell engines</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-6 p-5 bg-surface-container rounded-xl border border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-headline-md text-[18px] text-on-surface mb-1">Ecosystem Partners</p>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm">We integrate the tools that scale ecommerce brands</p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <span class="platform-badge">ShipBob</span>
+        <span class="platform-badge">ShipStation</span>
+        <span class="platform-badge">Klaviyo</span>
+        <span class="platform-badge">Loop Returns</span>
+        <span class="platform-badge">Klarna</span>
+        <span class="platform-badge">Skio</span>
+        <span class="platform-badge">Avalara</span>
+        <span class="platform-badge">Shop Pay</span>
+      </div>
+    </div>
+  </div>
+</section>ary rounded-full" style="width:92%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="relative px-4 sm:px-6 md:px-8 max-w-7xl mx-auto py-8 md:py-20 z-10">
+  <div class="glass-panel rounded-2xl p-6 sm:p-10 md:p-16 text-center relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-40 pointer-events-none"></div>
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[200px] rounded-full" style="background:radial-gradient(ellipse,rgba(0,112,243,0.12) 0%,transparent 70%);filter:blur(30px);pointer-events:none;"></div>
+    <div class="relative z-10">
+      <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-4 reveal">Ready to Build Your Commerce Stack?</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-8">Tell us your goals. We'll scope a solution that covers your entire commerce operation — from storefront to warehouse to finance dashboard.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:bg-inverse-primary transition-all duration-300 font-bold uppercase tracking-wider">Get a Quote <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+        <a href="process.html" class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-white/5 border border-white/10 text-on-surface font-label-sm text-label-sm rounded-lg hover:bg-white/10 transition-all duration-300 font-bold uppercase tracking-wider">See How We Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="w-full py-12 bg-surface border-t border-white/5 relative z-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+    <svg viewBox="0 0 240 72" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-[100px]"><text x="0" y="36" dominant-baseline="middle" text-anchor="start" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="32" letter-spacing="-0.04em"><tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan></text></svg>
+    <nav class="flex gap-6 flex-wrap justify-center">
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">Home</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="portfolio.html">Portfolio</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="services.html">Services</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="process.html">Process</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="contact.html">Contact</a>
+    </nav>
+    <div class="font-label-sm text-label-sm text-outline-variant uppercase tracking-widest">© 2026 ECOMDEV.</div>
+  </div>
+</footer>
+
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container/95 backdrop-blur-xl border-t border-white/8 shadow-2xl flex justify-around items-center px-1 h-[60px]" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="index.html"><span class="material-symbols-outlined mb-1 text-[22px]">home</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Home</span></a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="portfolio.html"><span class="material-symbols-outlined mb-1 text-[22px]">visibility</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Portfolio</span></a>
+  <a class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-3 py-2" href="services.html"><span class="material-symbols-outlined mb-1 text-[22px]" style="font-variation-settings:'FILL' 1;">widgets</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Services</span></a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="process.html"><span class="material-symbols-outlined mb-1 text-[22px]">sync_alt</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Process</span></a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="contact.html"><span class="material-symbols-outlined mb-1 text-[22px]">mail</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Contact</span></a>
+</nav>
+<div class="h-[60px] md:hidden w-full bg-surface" style="height: calc(60px + env(safe-area-inset-bottom, 0px));"></div>
+
+<script>
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body></html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>{ ecomdev } | Process — How We Work</title>
+<meta name="description" content="Our 5-step proven process for building high-conversion Shopify stores — from strategy through to launch and ongoing growth.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = { darkMode:"class", theme:{ extend:{ colors:{ "outline":"#8b90a0","inverse-on-surface":"#313030","on-background":"#e5e2e1","surface-container-lowest":"#0e0e0e","on-tertiary-container":"#ffffff","inverse-primary":"#0059c5","surface":"#131313","on-surface-variant":"#c1c6d7","tertiary":"#48ddbc","inverse-surface":"#e5e2e1","primary-container":"#0070f3","surface-bright":"#3a3939","on-secondary":"#470083","primary":"#aec6ff","outline-variant":"#414754","on-primary":"#002e6b","secondary":"#dbb8ff","tertiary-container":"#00866f","surface-container-highest":"#353534","surface-container":"#201f1f","background":"#131313","on-secondary-container":"#d0a6ff","secondary-container":"#6807ba","on-surface":"#e5e2e1","surface-dim":"#131313","error":"#ffb4ab","surface-container-low":"#1c1b1b","surface-variant":"#353534","primary-fixed-dim":"#aec6ff","on-primary-container":"#ffffff","on-primary-fixed-variant":"#004397","surface-container-high":"#2a2a2a" }, borderRadius:{ DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px" }, fontFamily:{ "body-lg":["Inter"],"display-lg":["Space Grotesk"],"display-2xl":["Space Grotesk"],"display-lg-mobile":["Space Grotesk"],"body-md":["Inter"],"label-sm":["JetBrains Mono"],"headline-md":["Space Grotesk"] }, fontSize:{ "body-lg":["18px",{lineHeight:"1.6",letterSpacing:"0",fontWeight:"400"}],"display-lg":["64px",{lineHeight:"1.1",letterSpacing:"-0.03em",fontWeight:"600"}],"display-lg-mobile":["40px",{lineHeight:"1.2",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["16px",{lineHeight:"1.6",letterSpacing:"0",fontWeight:"400"}],"label-sm":["12px",{lineHeight:"1.2",letterSpacing:"0.1em",fontWeight:"500"}],"headline-md":["32px",{lineHeight:"1.3",letterSpacing:"-0.01em",fontWeight:"500"}] } } } }
+</script>
+<style>
+  html{scroll-behavior:smooth}body{background-color:#131313;color:#e5e2e1;overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:max(884px,100dvh)}
+  .glass-panel{background:rgba(18,18,18,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.05)}
+  .grid-bg{background-image:linear-gradient(to right,rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(circle at center,black 40%,transparent 80%);-webkit-mask-image:radial-gradient(circle at center,black 40%,transparent 80%)}
+  .glow-primary{position:absolute;width:40vw;height:40vw;background:radial-gradient(circle,rgba(0,112,243,0.15) 0%,transparent 70%);filter:blur(60px);border-radius:50%;z-index:0;pointer-events:none}
+  @keyframes processCardIn{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes processNodePulse{0%,100%{box-shadow:0 0 0 0 rgba(0,112,243,0.4)}50%{box-shadow:0 0 0 8px rgba(0,112,243,0)}}
+  .process-card{opacity:0;transform:translateY(32px)}
+  .process-card.visible{animation:processCardIn 0.7s cubic-bezier(0.22,1,0.36,1) forwards}
+  .process-line-fill{height:0;background:linear-gradient(to bottom,#0070F3,#7928CA,#48ddbc,#0070F3,#dbb8ff);transition:height 2s cubic-bezier(0.4,0,0.2,1)}
+  .process-line-fill.visible{height:100%}
+  .process-node{animation:processNodePulse 2.5s ease-in-out infinite}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  .faq-item{border-bottom:1px solid rgba(255,255,255,0.05)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease}
+  .faq-answer.open{max-height:300px}
+  .faq-btn svg{transition:transform 0.3s ease}
+  .faq-btn.open svg{transform:rotate(180deg)}
+  .step-tag{display:inline-block;padding:4px 10px;border-radius:9999px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;font-weight:500}
+</style>
+</head>
+<body id="top" class="font-body-md text-body-md antialiased pb-24 md:pb-0">
+
+<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 h-20">
+  <div class="max-w-7xl w-full mx-auto px-8 flex items-center justify-between">
+    <a href="index.html"><svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-14 w-[187px]"><text x="200" y="60" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="48" letter-spacing="-0.04em"><tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan></text></svg></a>
+    <nav class="flex items-center gap-8">
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="index.html">Home</a>
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="services.html">Services</a>
+      <a class="text-primary font-bold font-label-sm text-label-sm uppercase tracking-wider" href="process.html">Process</a>
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="px-5 py-2.5 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:bg-inverse-primary transition-all duration-300 font-bold uppercase tracking-wider">Get a Quote</a>
+  </div>
+</header>
+<header class="md:hidden flex fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-white/5 items-center justify-center h-16">
+  <a href="index.html"><svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-14 w-[187px]"><text x="200" y="60" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="48" letter-spacing="-0.04em"><tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan></text></svg></a>
+</header>
+
+<main class="relative z-10 pt-20 md:pt-32 overflow-x-hidden">
+<div class="fixed inset-0 grid-bg z-0 pointer-events-none"></div>
+<div class="glow-primary top-[-10%] left-[-10%]"></div>
+<div class="glow-primary bottom-[20%] right-[-10%] opacity-50"></div>
+
+<!-- Hero -->
+<section class="relative px-5 md:px-8 max-w-7xl mx-auto py-10 md:py-24 z-10 text-center">
+  <p class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.25em] mb-4">How We Work</p>
+  <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-6">
+    A Proven Process<br>
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-tertiary">For Every Scale</span>
+  </h1>
+  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">We don't improvise. Every project follows a rigorous, battle-tested process that has shipped 50+ stores across 15 countries — on time, on budget, and above expectations.</p>
+</section>
+
+<!-- ═══ PROCESS TIMELINE ══ -->
+<section id="process-section" class="relative px-6 md:px-8 max-w-5xl mx-auto py-8 md:py-12 z-10">
+  <div class="relative flex flex-col gap-0">
+    <!-- Line -->
+    <div class="absolute left-[28px] md:left-[36px] top-[56px] bottom-[56px] w-[2px] bg-white/5 overflow-hidden rounded-full">
+      <div id="process-line" class="process-line-fill w-full rounded-full"></div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="process-card relative flex items-start gap-6 pb-10" style="animation-delay:0.05s">
+      <div class="relative flex-shrink-0 w-14 h-14 md:w-[72px] md:h-[72px] rounded-full flex items-center justify-center z-10 bg-surface-container border border-primary-container/40 shadow-[0_0_20px_rgba(0,112,243,0.25)] process-node">
+        <span class="material-symbols-outlined text-primary-container text-[26px] md:text-[32px]" style="font-variation-settings:'FILL' 1">lightbulb</span>
+      </div>
+      <div class="flex-1 glass-panel rounded-xl p-6 border border-white/5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="step-tag bg-primary-container/10 border border-primary-container/25 text-primary-container">01 / DISCOVERY</span>
+          <div class="h-[1px] flex-1 bg-primary-container/20 hidden md:block"></div>
+          <span class="font-label-sm text-[10px] text-outline uppercase tracking-widest hidden md:block">Week 1</span>
+        </div>
+        <h3 class="font-headline-md text-[22px] md:text-[26px] text-on-surface mb-3">Discovery & Strategy</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">We start by deeply understanding your business — brand positioning, customer psychology, revenue goals, and technical constraints. This phase produces the strategic blueprint that every subsequent decision is anchored to.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Brand &amp; Market Audit</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Technical &amp; Integration Scoping</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Conversion &amp; Revenue Modeling</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Detailed Project Spec &amp; Timeline</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="process-card relative flex items-start gap-6 pb-10" style="animation-delay:0.15s">
+      <div class="relative flex-shrink-0 w-14 h-14 md:w-[72px] md:h-[72px] rounded-full flex items-center justify-center z-10 bg-surface-container border border-[#7928CA]/40 shadow-[0_0_20px_rgba(121,40,202,0.25)] process-node" style="animation-delay:0.4s">
+        <span class="material-symbols-outlined text-[26px] md:text-[32px]" style="color:#7928CA;font-variation-settings:'FILL' 1">design_services</span>
+      </div>
+      <div class="flex-1 glass-panel rounded-xl p-6 border border-white/5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="step-tag" style="background:rgba(121,40,202,0.1);border:1px solid rgba(121,40,202,0.25);color:#7928CA">02 / DESIGN</span>
+          <div class="h-[1px] flex-1 hidden md:block" style="background:rgba(121,40,202,0.2)"></div>
+          <span class="font-label-sm text-[10px] text-outline uppercase tracking-widest hidden md:block">Week 2</span>
+        </div>
+        <h3 class="font-headline-md text-[22px] md:text-[26px] text-on-surface mb-3">Design Architecture</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">Before a single line of code is written, we design the complete UI/UX architecture. Figma wireframes, component library, and interactive prototypes — all reviewed and approved by you before development begins.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Visual Identity &amp; Figma Mockups</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Mobile-First UI/UX Wireframes</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Interactive Checkout Prototyping</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Design Revisions &amp; Approval Sign-off</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="process-card relative flex items-start gap-6 pb-10" style="animation-delay:0.25s">
+      <div class="relative flex-shrink-0 w-14 h-14 md:w-[72px] md:h-[72px] rounded-full flex items-center justify-center z-10 bg-surface-container border border-primary-container/40 shadow-[0_0_20px_rgba(0,112,243,0.25)] process-node" style="animation-delay:0.6s">
+        <span class="material-symbols-outlined text-primary-container text-[26px] md:text-[32px]" style="font-variation-settings:'FILL' 1">code</span>
+      </div>
+      <div class="flex-1 glass-panel rounded-xl p-6 border border-white/5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="step-tag bg-primary-container/10 border border-primary-container/25 text-primary-container">03 / BUILD</span>
+          <div class="h-[1px] flex-1 bg-primary-container/20 hidden md:block"></div>
+          <span class="font-label-sm text-[10px] text-outline uppercase tracking-widest hidden md:block">Weeks 3–5</span>
+        </div>
+        <h3 class="font-headline-md text-[22px] md:text-[26px] text-on-surface mb-3">Development & Integration</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">The build phase executes the approved blueprint with surgical precision. Modular Liquid components, API integrations for logistics and payments, and performance architecture are all engineered in parallel — not sequentially.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Custom OS 2.0 Theme &amp; Liquid Coding</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• API Connections (Logistics, Payments)</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Multi-Currency &amp; Markets Localization</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Image &amp; Asset Speed Optimization</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="process-card relative flex items-start gap-6 pb-10" style="animation-delay:0.35s">
+      <div class="relative flex-shrink-0 w-14 h-14 md:w-[72px] md:h-[72px] rounded-full flex items-center justify-center z-10 bg-surface-container border border-tertiary/40 shadow-[0_0_20px_rgba(72,221,188,0.2)] process-node" style="animation-delay:0.8s">
+        <span class="material-symbols-outlined text-tertiary text-[26px] md:text-[32px]" style="font-variation-settings:'FILL' 1">verified</span>
+      </div>
+      <div class="flex-1 glass-panel rounded-xl p-6 border border-white/5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="step-tag bg-tertiary/10 border border-tertiary/25 text-tertiary">04 / QA</span>
+          <div class="h-[1px] flex-1 bg-tertiary/20 hidden md:block"></div>
+          <span class="font-label-sm text-[10px] text-outline uppercase tracking-widest hidden md:block">Week 6</span>
+        </div>
+        <h3 class="font-headline-md text-[22px] md:text-[26px] text-on-surface mb-3">QA & Performance Testing</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">Every build undergoes rigorous quality assurance before a single customer sees it. We test across browsers, devices, screen sizes, and real-world network conditions — and we verify every integration works end-to-end.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Cross-Browser &amp; Device Testing</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Checkout &amp; Gateway Validation</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• 3PL &amp; Fulfillment Sync Audit</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Core Web Vitals Performance Tuning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="process-card relative flex items-start gap-6" style="animation-delay:0.45s">
+      <div class="relative flex-shrink-0 w-14 h-14 md:w-[72px] md:h-[72px] rounded-full flex items-center justify-center z-10 bg-surface-container border border-secondary/40 shadow-[0_0_20px_rgba(219,184,255,0.2)] process-node" style="animation-delay:1.0s">
+        <span class="material-symbols-outlined text-secondary text-[26px] md:text-[32px]" style="font-variation-settings:'FILL' 1">rocket_launch</span>
+      </div>
+      <div class="flex-1 glass-panel rounded-xl p-6 border border-white/5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="step-tag bg-secondary/10 border border-secondary/25 text-secondary">05 / LAUNCH</span>
+          <div class="h-[1px] flex-1 bg-secondary/20 hidden md:block"></div>
+          <span class="font-label-sm text-[10px] text-outline uppercase tracking-widest hidden md:block">Week 7 →</span>
+        </div>
+        <h3 class="font-headline-md text-[22px] md:text-[26px] text-on-surface mb-3">Launch & Growth Support</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">Launch day is the beginning, not the end. We execute a zero-downtime deployment, monitor post-launch performance in real time, and provide 30-day post-launch support as standard. Ongoing retainer packages available for brands that want a long-term engineering partner.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Zero-Downtime Theme Publish</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• 30-Day Launch Support Guarantee</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Custom CMS &amp; Admin Video Training</span>
+          <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-body-md text-on-surface-variant">• Ongoing Optimization &amp; Retainers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT TO EXPECT ══ -->
+<section class="relative px-6 md:px-8 max-w-7xl mx-auto py-12 md:py-16 z-10">
+  <div class="mb-10 text-center reveal">
+    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-3">What to Expect Working With Us</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">We take the ambiguity and stress out of your build. Here's what every client experiences.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="glass-panel p-7 rounded-xl border border-white/5 text-center reveal" style="transition-delay:0.1s">
+      <span class="material-symbols-outlined text-primary-container text-[36px] mb-4 block" style="font-variation-settings:'FILL' 1;">chat</span>
+      <h3 class="font-headline-md text-[20px] text-on-surface mb-2">Clear Communication</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant text-sm">Weekly progress updates, a shared Notion workspace, and a dedicated Slack channel. You're never in the dark.</p>
+    </div>
+    <div class="glass-panel p-7 rounded-xl border border-white/5 text-center reveal" style="transition-delay:0.2s">
+      <span class="material-symbols-outlined text-tertiary text-[36px] mb-4 block" style="font-variation-settings:'FILL' 1;">schedule</span>
+      <h3 class="font-headline-md text-[20px] text-on-surface mb-2">On-Time Delivery</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant text-sm">We've shipped 50+ projects on time. Our phased milestone structure means delays are caught early and resolved fast.</p>
+    </div>
+    <div class="glass-panel p-7 rounded-xl border border-white/5 text-center reveal" style="transition-delay:0.3s">
+      <span class="material-symbols-outlined text-secondary text-[36px] mb-4 block" style="font-variation-settings:'FILL' 1;">handshake</span>
+      <h3 class="font-headline-md text-[20px] text-on-surface mb-2">Long-Term Partnership</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant text-sm">We're not a build-and-bolt agency. Most of our clients have worked with us for 2+ years on feature development and growth.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ══ -->
+<section class="relative px-6 md:px-8 max-w-4xl mx-auto py-12 md:py-16 z-10">
+  <div class="mb-10 text-center reveal">
+    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-3">Frequently Asked Questions</h2>
+  </div>
+  <div class="space-y-0" id="faq-container">
+
+    <div class="faq-item py-5">
+      <button class="faq-btn w-full flex items-center justify-between text-left gap-4" onclick="toggleFaq(this)">
+        <span class="font-body-lg text-body-lg text-on-surface font-medium">How long does a typical Shopify build take?</span>
+        <svg class="w-5 h-5 text-on-surface-variant flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-3 pb-1">Most custom Shopify builds take 4–7 weeks from project kickoff to launch. Simpler theme builds with minimal custom development can be done in 2–3 weeks. Complex headless builds with logistics and payment integrations typically take 8–12 weeks. We'll give you a precise timeline after our discovery call.</p>
+      </div>
+    </div>
+
+    <div class="faq-item py-5">
+      <button class="faq-btn w-full flex items-center justify-between text-left gap-4" onclick="toggleFaq(this)">
+        <span class="font-body-lg text-body-lg text-on-surface font-medium">Can you integrate our existing 3PL provider?</span>
+        <svg class="w-5 h-5 text-on-surface-variant flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-3 pb-1">Yes. We have integrations with all major 3PL platforms including ShipBob, ShipStation, Deliverr, Flexport, and many others. If your provider has an API or webhook capability, we can integrate it. We'll map out the exact data flows during the discovery phase.</p>
+      </div>
+    </div>
+
+    <div class="faq-item py-5">
+      <button class="faq-btn w-full flex items-center justify-between text-left gap-4" onclick="toggleFaq(this)">
+        <span class="font-body-lg text-body-lg text-on-surface font-medium">Do you handle tax compliance for international stores?</span>
+        <svg class="w-5 h-5 text-on-surface-variant flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-3 pb-1">Absolutely. We configure Shopify Markets with TaxJar (US) or Avalara (international) for automated tax calculation. This covers VAT, GST, sales tax, and import duties across all jurisdictions your store sells into. We also set up customs duties display at checkout to prevent checkout abandonment from surprise import costs.</p>
+      </div>
+    </div>
+
+    <div class="faq-item py-5">
+      <button class="faq-btn w-full flex items-center justify-between text-left gap-4" onclick="toggleFaq(this)">
+        <span class="font-body-lg text-body-lg text-on-surface font-medium">What does ongoing support look like after launch?</span>
+        <svg class="w-5 h-5 text-on-surface-variant flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-3 pb-1">All projects include 30-day post-launch priority support with guaranteed 24-hour response times. After that, clients can join our monthly retainer programmes, which include a set number of development hours per month for ongoing feature development, CRO improvements, app integrations, and technical maintenance.</p>
+      </div>
+    </div>
+
+    <div class="faq-item py-5">
+      <button class="faq-btn w-full flex items-center justify-between text-left gap-4" onclick="toggleFaq(this)">
+        <span class="font-body-lg text-body-lg text-on-surface font-medium">Do you work with brands in the MENA region?</span>
+        <svg class="w-5 h-5 text-on-surface-variant flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-3 pb-1">Yes. We have deep experience in the MENA market, including Arabic RTL language support, Tabby and Tamara BNPL integrations, regional payment gateways, and VAT compliance for UAE and Saudi Arabia. We've delivered projects for clients across the GCC and broader MENA region.</p>
+      </div>
+    </div>
+
+    <div class="faq-item py-5">
+      <button class="faq-btn w-full flex items-center justify-between text-left gap-4" onclick="toggleFaq(this)">
+        <span class="font-body-lg text-body-lg text-on-surface font-medium">Can you migrate our existing store to a new theme?</span>
+        <svg class="w-5 h-5 text-on-surface-variant flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-3 pb-1">Yes — migration is one of our most common project types. We handle full content migration (products, collections, metafields, blog posts), redirect mapping, and zero-downtime cutover. We also conduct a pre-migration SEO audit to ensure no rankings are lost during the transition.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="relative px-4 sm:px-6 md:px-8 max-w-7xl mx-auto py-8 md:py-20 z-10">
+  <div class="glass-panel rounded-2xl p-6 sm:p-10 md:p-16 text-center relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-40 pointer-events-none"></div>
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[200px] rounded-full" style="background:radial-gradient(ellipse,rgba(0,112,243,0.12) 0%,transparent 70%);filter:blur(30px);pointer-events:none;"></div>
+    <div class="relative z-10">
+      <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-4 reveal">Ready to Start Your Build?</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-8">Book a discovery call. We'll scope your project, answer every question, and send a detailed proposal within 48 hours.</p>
+      <a href="contact.html" class="inline-flex items-center gap-2 px-10 py-4 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:bg-inverse-primary transition-all duration-300 font-bold uppercase tracking-wider">Get in Touch <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="w-full py-12 bg-surface border-t border-white/5 relative z-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+    <svg viewBox="0 0 240 72" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-[100px]"><text x="0" y="36" dominant-baseline="middle" text-anchor="start" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="32" letter-spacing="-0.04em"><tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan></text></svg>
+    <nav class="flex gap-6 flex-wrap justify-center">
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">Home</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="portfolio.html">Portfolio</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="services.html">Services</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="process.html">Process</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="contact.html">Contact</a>
+    </nav>
+    <div class="font-label-sm text-label-sm text-outline-variant uppercase tracking-widest">© 2026 ECOMDEV.</div>
+  </div>
+</footer>
+
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container/95 backdrop-blur-xl border-t border-white/8 shadow-2xl flex justify-around items-center px-1 h-[60px]" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="index.html"><span class="material-symbols-outlined mb-1 text-[22px]">home</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Home</span></a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="portfolio.html"><span class="material-symbols-outlined mb-1 text-[22px]">visibility</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Portfolio</span></a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="services.html"><span class="material-symbols-outlined mb-1 text-[22px]">widgets</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Services</span></a>
+  <a class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-3 py-2" href="process.html"><span class="material-symbols-outlined mb-1 text-[22px]" style="font-variation-settings:'FILL' 1;">sync_alt</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Process</span></a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="contact.html"><span class="material-symbols-outlined mb-1 text-[22px]">mail</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Contact</span></a>
+</nav>
+<div class="h-[60px] md:hidden w-full bg-surface" style="height: calc(60px + env(safe-area-inset-bottom, 0px));"></div>
+
+<script>
+(function() {
+  const cards = document.querySelectorAll('.process-card');
+  const line = document.getElementById('process-line');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (line) line.classList.add('visible');
+        cards.forEach((card, i) => { const delay = parseFloat(card.style.animationDelay || 0) * 1000 + i * 180; setTimeout(() => card.classList.add('visible'), delay); });
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.05 });
+  const section = document.getElementById('process-section');
+  if (section) observer.observe(section);
+})();
+
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-btn').forEach(b => b.classList.remove('open'));
+  if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+}
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body></html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>{ ecomdev } | Contact — Start Your Project</title>
+<meta name="description" content="Ready to build your Shopify store? Contact ecomdev to discuss your project. Expert Shopify development, logistics integration, and finance systems.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = { darkMode:"class", theme:{ extend:{ colors:{ "outline":"#8b90a0","inverse-on-surface":"#313030","on-background":"#e5e2e1","surface-container-lowest":"#0e0e0e","on-tertiary-container":"#ffffff","inverse-primary":"#0059c5","surface":"#131313","on-surface-variant":"#c1c6d7","tertiary":"#48ddbc","inverse-surface":"#e5e2e1","primary-container":"#0070f3","surface-bright":"#3a3939","on-secondary":"#470083","primary":"#aec6ff","outline-variant":"#414754","on-primary":"#002e6b","secondary":"#dbb8ff","tertiary-container":"#00866f","surface-container-highest":"#353534","surface-container":"#201f1f","background":"#131313","on-tertiary":"#00382d","on-secondary-container":"#d0a6ff","secondary-container":"#6807ba","on-surface":"#e5e2e1","surface-dim":"#131313","error":"#ffb4ab","surface-container-low":"#1c1b1b","surface-variant":"#353534","primary-fixed-dim":"#aec6ff","on-primary-container":"#ffffff","on-primary-fixed-variant":"#004397","surface-container-high":"#2a2a2a" }, borderRadius:{ DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px" }, fontFamily:{ "body-lg":["Inter"],"display-lg":["Space Grotesk"],"display-2xl":["Space Grotesk"],"display-lg-mobile":["Space Grotesk"],"body-md":["Inter"],"label-sm":["JetBrains Mono"],"headline-md":["Space Grotesk"] }, fontSize:{ "body-lg":["18px",{lineHeight:"1.6",letterSpacing:"0",fontWeight:"400"}],"display-lg":["64px",{lineHeight:"1.1",letterSpacing:"-0.03em",fontWeight:"600"}],"display-lg-mobile":["40px",{lineHeight:"1.2",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["16px",{lineHeight:"1.6",letterSpacing:"0",fontWeight:"400"}],"label-sm":["12px",{lineHeight:"1.2",letterSpacing:"0.1em",fontWeight:"500"}],"headline-md":["32px",{lineHeight:"1.3",letterSpacing:"-0.01em",fontWeight:"500"}] } } } }
+</script>
+<style>
+  html{scroll-behavior:smooth}body{background-color:#131313;color:#e5e2e1;overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:max(884px,100dvh)}
+  .glass-panel{background:rgba(18,18,18,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.05)}
+  .grid-bg{background-image:linear-gradient(to right,rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(circle at center,black 40%,transparent 80%);-webkit-mask-image:radial-gradient(circle at center,black 40%,transparent 80%)}
+  .glow-primary{position:absolute;width:40vw;height:40vw;background:radial-gradient(circle,rgba(0,112,243,0.15) 0%,transparent 70%);filter:blur(60px);border-radius:50%;z-index:0;pointer-events:none}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  /* Form inputs */
+  .form-field{background:#1a1919;border:1px solid rgba(255,255,255,0.16);border-radius:0.5rem;padding:14px 16px;color:#e5e2e1;font-family:'Inter',sans-serif;font-size:16px;width:100%;transition:border-color 0.2s ease,box-shadow 0.2s ease;outline:none;-webkit-appearance:none}
+  .form-field:focus{border-color:rgba(0,112,243,0.8);box-shadow:0 0 0 3px rgba(0,112,243,0.15)}
+  .form-field::placeholder{color:#8b90a0}
+  .form-label{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;font-weight:600;color:#c1c6d7;text-transform:uppercase;margin-bottom:8px}
+  select.form-field option{background:#1c1b1b;color:#e5e2e1}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease}
+  .faq-answer.open{max-height:300px}
+  .faq-btn svg{transition:transform 0.3s ease}
+  .faq-btn.open svg{transform:rotate(180deg)}
+  .trust-badge{display:flex;align-items:center;gap:10px;padding:14px 18px;background:rgba(18,18,18,0.6);border:1px solid rgba(255,255,255,0.05);border-radius:0.75rem;transition:border-color 0.3s ease}
+  .trust-badge:hover{border-color:rgba(0,112,243,0.2)}
+</style>
+</head>
+<body id="top" class="font-body-md text-body-md antialiased pb-24 md:pb-0">
+
+<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 h-20">
+  <div class="max-w-7xl w-full mx-auto px-8 flex items-center justify-between">
+    <a href="index.html"><svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-14 w-[187px]"><text x="200" y="60" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="48" letter-spacing="-0.04em"><tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan></text></svg></a>
+    <nav class="flex items-center gap-8">
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="index.html">Home</a>
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="services.html">Services</a>
+      <a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors" href="process.html">Process</a>
+      <a class="text-primary font-bold font-label-sm text-label-sm uppercase tracking-wider" href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="px-5 py-2.5 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:bg-inverse-primary transition-all duration-300 font-bold uppercase tracking-wider">Get a Quote</a>
+  </div>
+</header>
+<header class="md:hidden flex fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-white/5 items-center justify-center h-16">
+  <a href="index.html"><svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-14 w-[187px]"><text x="200" y="60" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="48" letter-spacing="-0.04em"><tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan></text></svg></a>
+</header>
+
+<main class="relative z-10 pt-20 md:pt-32 overflow-x-hidden">
+<div class="fixed inset-0 grid-bg z-0 pointer-events-none"></div>
+<div class="glow-primary top-[-10%] left-[-10%]"></div>
+<div class="glow-primary bottom-[20%] right-[-10%] opacity-40"></div>
+
+<!-- Hero -->
+<section class="relative px-6 md:px-8 max-w-7xl mx-auto py-16 md:py-20 z-10 text-center">
+  <p class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.25em] mb-4">Get in Touch</p>
+  <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-6">
+    Let's Build Something<br>
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-tertiary">Extraordinary</span>
+  </h1>
+  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Tell us about your project. We review every inquiry personally and respond with a tailored proposal within 48 hours.</p>
+</section>
+
+<!-- ═══ MAIN CONTENT ═══ -->
+<section class="relative px-6 md:px-8 max-w-7xl mx-auto z-10 pb-12">
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+
+    <!-- LEFT: Trust Signals & Contact Info -->
+    <div class="lg:col-span-2 flex flex-col gap-6">
+
+      <!-- Trust Badges (Streamlined & High-Contrast) -->
+      <div class="reveal">
+        <p class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-4">Why Work With Us</p>
+        <div class="flex flex-col gap-3">
+          <div class="trust-badge">
+            <span class="material-symbols-outlined text-primary-container text-[24px]" style="font-variation-settings:'FILL' 1;">verified</span>
+            <div>
+              <p class="font-body-md font-semibold text-on-surface text-[14px]">50+ Stores Delivered</p>
+              <p class="font-body-md text-on-surface-variant text-[13px] mt-0.5">High-performance Shopify builds worldwide.</p>
+            </div>
+          </div>
+          <div class="trust-badge">
+            <span class="material-symbols-outlined text-tertiary text-[24px]" style="font-variation-settings:'FILL' 1;">speed</span>
+            <div>
+              <p class="font-body-md font-semibold text-on-surface text-[14px]">99 Avg. PageSpeed Score</p>
+              <p class="font-body-md text-on-surface-variant text-[13px] mt-0.5">Every storefront is built for speed and conversions.</p>
+            </div>
+          </div>
+          <div class="trust-badge">
+            <span class="material-symbols-outlined text-[24px]" style="color:#7928CA;font-variation-settings:'FILL' 1;">sync_alt</span>
+            <div>
+              <p class="font-body-md font-semibold text-on-surface text-[14px]">Expert Integrations</p>
+              <p class="font-body-md text-on-surface-variant text-[13px] mt-0.5">Seamless 3PL logistics, payments, BNPL, and Klaviyo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direct Contact (High Contrast) -->
+      <div class="glass-panel rounded-xl p-6 border border-white/5 reveal" style="transition-delay:0.1s">
+        <p class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-4">Direct Contact</p>
+        <div class="flex flex-col gap-4">
+          <a href="https://www.instagram.com/ecomdev.mena/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface transition-colors group">
+            <div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center group-hover:bg-primary-container/15 transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </div>
+            <div>
+              <p class="font-body-md font-semibold text-on-surface text-[14px]">Instagram</p>
+              <p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wide">@ecomdev.mena</p>
+            </div>
+          </a>
+          <div class="h-[1px] bg-white/5"></div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant">schedule</span>
+            </div>
+            <div>
+              <p class="font-body-md font-semibold text-on-surface text-[14px]">Response Time</p>
+              <p class="font-label-sm text-[11px] text-tertiary uppercase tracking-wide">Within 48 hours guaranteed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Concise Contact Form -->
+    <div class="lg:col-span-3 reveal" style="transition-delay:0.05s">
+      <div class="glass-panel p-8 md:p-10 rounded-2xl border border-white/5">
+        <h2 class="font-headline-md text-[24px] text-on-surface mb-2">Project Inquiry</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8">Fill out this quick form and we'll get back to you with a proposal within 48 hours.</p>
+
+        <form id="contact-form" action="https://formspree.io/f/mzdqdlwz" method="POST" class="flex flex-col gap-6">
+
+          <!-- Name + Email -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="form-label" for="form-name">Full Name</label>
+              <input id="form-name" name="name" required class="form-field" placeholder="Your name" type="text">
+            </div>
+            <div>
+              <label class="form-label" for="form-email">Email Address</label>
+              <input id="form-email" name="email" required class="form-field" placeholder="you@example.com" type="email">
+            </div>
+          </div>
+
+          <!-- Brand + Website -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="form-label" for="form-company">Company / Brand Name</label>
+              <input id="form-company" name="company" class="form-field" placeholder="Your brand" type="text">
+            </div>
+            <div>
+              <label class="form-label" for="form-website">Current Website (optional)</label>
+              <input id="form-website" name="website" class="form-field" placeholder="https://" type="url">
+            </div>
+          </div>
+
+          <!-- Project Type + Budget -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="form-label" for="form-goal">Project Type</label>
+              <select id="form-goal" name="project_goal" required class="form-field cursor-pointer">
+                <option value="" disabled selected>Select project type</option>
+                <option value="new_store">Launch a New Shopify Store</option>
+                <option value="redesign">Redesign / Migrate to Shopify</option>
+                <option value="headless">Headless Shopify Storefront</option>
+                <option value="optimization">Speed &amp; CRO Optimization</option>
+                <option value="retainer">Ongoing Retainer &amp; Support</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="form-budget">Project Budget</label>
+              <select id="form-budget" name="budget" required class="form-field cursor-pointer">
+                <option value="" disabled selected>Estimated budget</option>
+                <option value="under5k">Under $5,000</option>
+                <option value="5k_10k">$5,000 – $10,000</option>
+                <option value="10k_25k">$10,000 – $25,000</option>
+                <option value="25k_plus">$25,000+</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label class="form-label" for="form-message">Project Description</label>
+            <textarea id="form-message" name="message" rows="5" required class="form-field resize-none" placeholder="Tell us about your brand goals, required integrations, and timeline..."></textarea>
+          </div>
+
+          <button id="submit-btn" class="w-full py-4 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-xl hover:bg-inverse-primary transition-all duration-300 font-bold uppercase tracking-wider flex items-center justify-center gap-2 mt-2" type="submit">
+            Submit Inquiry
+            <span class="material-symbols-outlined text-[18px]">send</span>
+          </button>
+          <div id="form-status" class="hidden text-[12px] font-label-sm uppercase tracking-wider mt-1 transition-all duration-300 text-center"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT HAPPENS NEXT ══ -->
+<section class="relative px-6 md:px-8 max-w-7xl mx-auto py-12 md:py-16 z-10">
+  <div class="mb-10 text-center reveal">
+    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-3">What Happens After You Submit</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="glass-panel p-7 rounded-xl border border-white/5 text-center reveal" style="transition-delay:0.1s">
+      <div class="w-12 h-12 rounded-full bg-primary-container/15 border border-primary-container/30 flex items-center justify-center mx-auto mb-4">
+        <span class="font-bold text-primary-container font-headline-md text-[20px]">1</span>
+      </div>
+      <h3 class="font-headline-md text-[18px] text-on-surface mb-2">We Review Your Inquiry</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant text-sm">Within 48 hours, a senior team member personally reviews your submission and prepares relevant questions.</p>
+    </div>
+    <div class="glass-panel p-7 rounded-xl border border-white/5 text-center reveal" style="transition-delay:0.2s">
+      <div class="w-12 h-12 rounded-full border flex items-center justify-center mx-auto mb-4" style="background:rgba(121,40,202,0.15);border-color:rgba(121,40,202,0.3)">
+        <span class="font-bold font-headline-md text-[20px]" style="color:#7928CA">2</span>
+      </div>
+      <h3 class="font-headline-md text-[18px] text-on-surface mb-2">Discovery Call</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant text-sm">We schedule a 30-minute call to deeply understand your goals, brand, and technical requirements.</p>
+    </div>
+    <div class="glass-panel p-7 rounded-xl border border-white/5 text-center reveal" style="transition-delay:0.3s">
+      <div class="w-12 h-12 rounded-full bg-tertiary/15 border border-tertiary/30 flex items-center justify-center mx-auto mb-4">
+        <span class="font-bold text-tertiary font-headline-md text-[20px]">3</span>
+      </div>
+      <h3 class="font-headline-md text-[18px] text-on-surface mb-2">Tailored Proposal</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant text-sm">You receive a detailed project proposal with scope, timeline, integrations, and transparent pricing within 48 hours of the call.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUICK FAQ ══ -->
+<section class="relative px-6 md:px-8 max-w-4xl mx-auto py-8 md:py-12 z-10">
+  <div class="mb-8 text-center reveal">
+    <h2 class="font-headline-md text-[24px] md:text-[28px] text-on-surface">Common Questions</h2>
+  </div>
+  <div class="space-y-0">
+    <div class="border-b border-white/5 py-5">
+      <button class="faq-btn w-full flex items-center justify-between text-left gap-4" onclick="toggleFaq(this)">
+        <span class="font-body-lg text-body-lg text-on-surface font-medium">Do you have minimum project budgets?</span>
+        <svg class="w-5 h-5 text-on-surface-variant flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer"><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-3 pb-1">Our standard Shopify builds start from $5,000. Full-stack commerce builds with logistics and finance integrations typically range from $15,000–$50,000+. We work with brands at various stages — what matters most is the ambition and fit. We always provide transparent pricing in our proposals.</p></div>
+    </div>
+    <div class="border-b border-white/5 py-5">
+      <button class="faq-btn w-full flex items-center justify-between text-left gap-4" onclick="toggleFaq(this)">
+        <span class="font-body-lg text-body-lg text-on-surface font-medium">Can we start small and scale up?</span>
+        <svg class="w-5 h-5 text-on-surface-variant flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer"><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-3 pb-1">Absolutely. Many clients start with a custom Shopify theme build and progressively add logistics integration, payment systems, and growth automation as their brand scales. Our architecture is designed for this — we build foundations that can expand without rebuilding.</p></div>
+    </div>
+    <div class="border-b border-white/5 py-5">
+      <button class="faq-btn w-full flex items-center justify-between text-left gap-4" onclick="toggleFaq(this)">
+        <span class="font-body-lg text-body-lg text-on-surface font-medium">Do you offer retainer/maintenance packages?</span>
+        <svg class="w-5 h-5 text-on-surface-variant flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer"><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-3 pb-1">Yes. After your build is live, we offer monthly retainer packages starting from 10 hours/month. These are ideal for brands that want ongoing feature development, CRO experiments, integration updates, and proactive technical maintenance. Most of our long-term clients are on retainers.</p></div>
+    </div>
+    <div class="border-b border-white/5 py-5">
+      <button class="faq-btn w-full flex items-center justify-between text-left gap-4" onclick="toggleFaq(this)">
+        <span class="font-body-lg text-body-lg text-on-surface font-medium">We already have a store — can you help us improve it?</span>
+        <svg class="w-5 h-5 text-on-surface-variant flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer"><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-3 pb-1">Yes — auditing and improving existing stores is one of our most impactful services. We conduct a full technical and commercial audit, then recommend and implement the highest-impact improvements: performance, checkout optimization, logistics setup, or whatever is holding you back most.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="w-full py-12 bg-surface border-t border-white/5 relative z-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+    <svg viewBox="0 0 240 72" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-[100px]"><text x="0" y="36" dominant-baseline="middle" text-anchor="start" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="32" letter-spacing="-0.04em"><tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan></text></svg>
+    <nav class="flex gap-6 flex-wrap justify-center">
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">Home</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="portfolio.html">Portfolio</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="services.html">Services</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="process.html">Process</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="contact.html">Contact</a>
+    </nav>
+    <div class="font-label-sm text-label-sm text-outline-variant uppercase tracking-widest">© 2026 ECOMDEV.</div>
+  </div>
+</footer>
+
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container/95 backdrop-blur-xl border-t border-white/8 shadow-2xl flex justify-around items-center px-1 h-[60px]" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="index.html"><span class="material-symbols-outlined mb-1 text-[22px]">home</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Home</span></a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="portfolio.html"><span class="material-symbols-outlined mb-1 text-[22px]">visibility</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Portfolio</span></a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="services.html"><span class="material-symbols-outlined mb-1 text-[22px]">widgets</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Services</span></a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2" href="process.html"><span class="material-symbols-outlined mb-1 text-[22px]">sync_alt</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Process</span></a>
+  <a class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-3 py-2" href="contact.html"><span class="material-symbols-outlined mb-1 text-[22px]" style="font-variation-settings:'FILL' 1;">mail</span><span class="text-[9px] font-label-sm uppercase tracking-wide">Contact</span></a>
+</nav>
+<div class="h-[60px] md:hidden w-full bg-surface" style="height: calc(60px + env(safe-area-inset-bottom, 0px));"></div>
+
+<script>
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+const submitBtn = document.getElementById('submit-btn');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">autorenew</span> Sending...';
+    showStatus('Sending your inquiry...', 'text-primary-container');
+    const formData = new FormData(contactForm);
+    const payload = {};
+    for (let [key, value] of formData.entries()) {
+      if (payload[key]) { if (!Array.isArray(payload[key])) payload[key] = [payload[key]]; payload[key].push(value); }
+      else payload[key] = value;
+    }
+    try {
+      const response = await fetch(contactForm.getAttribute('action'), { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      if (response.ok) {
+        showStatus('✓ Inquiry sent! We\'ll respond within 48 hours.', 'text-tertiary');
+        contactForm.reset();
+        submitBtn.innerHTML = '✓ Sent Successfully';
+      } else {
+        const data = await response.json();
+        showStatus(data.errors ? data.errors.map(e => e.message).join(', ') : 'Submission failed. Please try again.', 'text-error');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Submit Inquiry <span class="material-symbols-outlined text-[18px]">send</span>';
+      }
+    } catch (error) {
+      showStatus('Network error. Please try again or contact us via Instagram.', 'text-error');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Submit Inquiry <span class="material-symbols-outlined text-[18px]">send</span>';
+    }
+  });
+}
+function showStatus(text, colorClass) {
+  if (!formStatus) return;
+  formStatus.textContent = text;
+  formStatus.className = `text-[12px] font-label-sm uppercase tracking-wider mt-1 transition-all duration-300 text-center ${colorClass}`;
+  formStatus.classList.remove('hidden');
+}
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-btn').forEach(b => b.classList.remove('open'));
+  if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+}
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body></html>
