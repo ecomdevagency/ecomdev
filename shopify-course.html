@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{ ecomdev } | Shopify Mastery Course</title>
+  <meta name="description" content="Exclusive Shopify management course for ecomdev clients.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0a0a0b;--surface:#111113;--surface-2:#18181b;--surface-3:#222225;
+      --border:rgba(255,255,255,.07);--border-hover:rgba(255,255,255,.14);
+      --primary:#0070f3;--primary-soft:rgba(0,112,243,.1);--primary-glow:rgba(0,112,243,.25);
+      --purple:#7928CA;--teal:#48ddbc;
+      --text:#f0eeec;--text-2:#a1a1aa;--text-3:#71717a;
+      --sans:'Inter',sans-serif;--display:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;
+      --r:10px;--r-lg:14px;--ease:.2s cubic-bezier(.4,0,.2,1);
+    }
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100dvh;overflow-x:hidden}
+
+    /* Ambient */
+    .grid-bg{position:fixed;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.015) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,black,transparent);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,black,transparent);pointer-events:none;z-index:0}
+    .glow{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0}
+
+    /* Glass */
+    .glass{background:rgba(17,17,19,.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--border)}
+
+    /* ═══ LOGIN ═══ */
+    #login{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:var(--bg);transition:opacity .5s,visibility .5s}
+    #login.out{opacity:0;visibility:hidden;pointer-events:none}
+    .lc{width:100%;max-width:400px;padding:2.5rem 2rem;border-radius:var(--r-lg);text-align:center;position:relative;animation:fadeUp .5s both}
+    .lc::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(0,112,243,.45),rgba(121,40,202,.3),rgba(72,221,188,.2));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+    .lc-logo{margin-bottom:.5rem}
+    .lc-logo svg{filter:drop-shadow(0 0 18px rgba(0,112,243,.35))}
+    .lc-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;background:var(--primary-soft);border:1px solid rgba(0,112,243,.2);border-radius:9999px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-2);margin-bottom:1.5rem}
+    .lc-dot{width:5px;height:5px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+    .lc h1{font-family:var(--display);font-size:1.85rem;font-weight:700;letter-spacing:-.03em;line-height:1.2;margin-bottom:.4rem}
+    .lc h1 span{background:linear-gradient(90deg,#0070f3,#7928CA,#48ddbc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .lc-sub{font-size:.82rem;color:var(--text-3);margin-bottom:1.75rem;line-height:1.5}
+    .pw-wrap{position:relative;margin-bottom:.75rem}
+    .pw-wrap .ico{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--text-3);font-size:18px;pointer-events:none;transition:color var(--ease)}
+    .pw-wrap:focus-within .ico{color:var(--primary)}
+    .pw-inp{width:100%;padding:.8rem 2.8rem;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);color:var(--text);font-family:var(--mono);font-size:.85rem;letter-spacing:.05em;outline:none;transition:border-color var(--ease),box-shadow var(--ease)}
+    .pw-inp::placeholder{color:var(--text-3);font-family:var(--sans);letter-spacing:0}
+    .pw-inp:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,112,243,.12)}
+    .pw-tog{position:absolute;right:.8rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-3);cursor:pointer;display:flex;padding:.15rem;transition:color var(--ease)}
+    .pw-tog:hover{color:var(--text)}
+    .lc-btn{width:100%;padding:.8rem;background:var(--primary);color:#fff;font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:var(--r);cursor:pointer;transition:all var(--ease);margin-top:.25rem}
+    .lc-btn:hover{background:#005bd4;box-shadow:0 6px 20px var(--primary-glow)}
+    .lc-err{display:none;align-items:center;gap:.4rem;margin-top:.6rem;padding:.5rem .75rem;background:rgba(255,50,50,.08);border:1px solid rgba(255,50,50,.2);border-radius:var(--r);color:#f87171;font-size:.78rem}
+    .lc-err.show{display:flex}
+
+    /* ═══ COURSE ═══ */
+    #app{display:none;min-height:100dvh;flex-direction:column}
+    #app.on{display:flex}
+
+    /* Header */
+    .hdr{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;padding:0 1.25rem;gap:.75rem}
+    .hdr-logo{flex-shrink:0}
+    .hdr-tag{display:flex;align-items:center;gap:.3rem;padding:.2rem .5rem;background:var(--primary-soft);border:1px solid rgba(0,112,243,.15);border-radius:9999px;font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#93b4f8}
+    .hdr-space{flex:1}
+    .hdr-prog{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:10px;color:var(--text-3)}
+    .prog-track{width:100px;height:3px;background:var(--surface-3);border-radius:9999px;overflow:hidden}
+    .prog-bar{height:100%;background:linear-gradient(90deg,var(--primary),var(--teal));border-radius:9999px;transition:width .4s ease}
+    .hdr-btn{display:flex;align-items:center;justify-content:center;gap:.3rem;padding:.3rem .6rem;background:transparent;border:1px solid var(--border);border-radius:var(--r);color:var(--text-3);font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all var(--ease)}
+    .hdr-btn:hover{border-color:var(--border-hover);color:var(--text)}
+
+    /* Layout */
+    .layout{display:flex;flex:1;position:relative;z-index:1}
+
+    /* Sidebar */
+    .side{width:280px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);height:calc(100dvh - 56px);position:sticky;top:56px;overflow-y:auto;display:flex;flex-direction:column}
+    .side::-webkit-scrollbar{width:3px}
+    .side::-webkit-scrollbar-thumb{background:var(--surface-3);border-radius:9999px}
+    .side-hd{padding:1.25rem 1rem .875rem;border-bottom:1px solid var(--border)}
+    .side-lbl{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:.3rem}
+    .side-name{font-family:var(--display);font-size:.95rem;font-weight:600;color:var(--text);letter-spacing:-.015em}
+    .ch-list{padding:.4rem 0;flex:1}
+    .ch{display:flex;align-items:center;gap:.7rem;padding:.7rem 1rem;cursor:pointer;transition:background var(--ease);border-left:2px solid transparent}
+    .ch:hover{background:rgba(255,255,255,.025)}
+    .ch.on{background:rgba(0,112,243,.06);border-left-color:var(--primary)}
+    .ch-n{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;font-weight:600;flex-shrink:0;background:var(--surface-2);border:1px solid var(--border);color:var(--text-3);transition:all var(--ease)}
+    .ch.on .ch-n{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 0 8px var(--primary-glow)}
+    .ch.ok .ch-n{background:rgba(72,221,188,.12);border-color:rgba(72,221,188,.25);color:var(--teal)}
+    .ch-t{font-size:.8rem;font-weight:500;color:var(--text-2);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:color var(--ease)}
+    .ch.on .ch-t,.ch:hover .ch-t{color:var(--text)}
+    .ch-ok{font-size:16px;color:var(--teal);opacity:0;flex-shrink:0;transition:opacity var(--ease)}
+    .ch.ok .ch-ok{opacity:1}
+
+    /* Main */
+    .main{flex:1;min-width:0;display:flex;flex-direction:column;padding:1.5rem 2rem 2rem}
+
+    /* Player */
+    .player{width:100%;position:relative;border-radius:var(--r-lg);overflow:hidden;background:#000;border:1px solid var(--border);margin-bottom:1.25rem}
+    .player-ar{position:relative;padding-top:56.25%}
+    .player-ar iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+    .v-ov{position:absolute;inset:0;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.82);cursor:pointer;transition:opacity .4s}
+    .v-ov.hide{opacity:0;pointer-events:none}
+    .play-btn{width:64px;height:64px;border-radius:50%;border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;transition:all .25s}
+    .v-ov:hover .play-btn{border-color:var(--primary);transform:scale(1.06)}
+    .play-tri{width:0;height:0;border-style:solid;border-width:11px 0 11px 20px;border-color:transparent transparent transparent #fff;margin-left:4px}
+    .v-ov-title{font-family:var(--display);font-size:1rem;font-weight:600;color:#fff;text-align:center;padding:0 1rem;margin-bottom:.3rem}
+    .v-ov-sub{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+
+    /* Lesson info */
+    .lesson{margin-bottom:1.25rem}
+    .lesson-tag{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .5rem;background:var(--primary-soft);border:1px solid rgba(0,112,243,.15);border-radius:9999px;font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#93b4f8;margin-bottom:.5rem}
+    .lesson h2{font-family:var(--display);font-size:1.3rem;font-weight:700;letter-spacing:-.02em;color:var(--text);line-height:1.3;margin-bottom:.35rem}
+    .lesson p{font-size:.85rem;color:var(--text-2);line-height:1.6;max-width:580px}
+    .lesson-btns{display:flex;align-items:center;gap:.6rem;margin-top:.875rem}
+    .btn-mark{display:flex;align-items:center;gap:.4rem;padding:.5rem 1rem;background:rgba(72,221,188,.08);border:1px solid rgba(72,221,188,.2);border-radius:var(--r);color:var(--teal);font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all var(--ease)}
+    .btn-mark:hover{background:rgba(72,221,188,.15);border-color:rgba(72,221,188,.4)}
+    .btn-mark.done{border-color:var(--teal)}
+    .btn-next{display:flex;align-items:center;gap:.4rem;padding:.5rem 1rem;background:var(--primary);border:none;border-radius:var(--r);color:#fff;font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all var(--ease)}
+    .btn-next:hover{background:#005bd4;box-shadow:0 4px 14px var(--primary-glow)}
+    .btn-next:disabled{opacity:.25;cursor:not-allowed;box-shadow:none;background:var(--primary)}
+
+    /* Mobile bottom nav */
+    .mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:48;background:rgba(10,10,11,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--border);padding:.6rem .875rem;align-items:center;gap:.5rem}
+    .mob-btn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--surface-2);color:var(--text-3);cursor:pointer;flex-shrink:0;transition:all var(--ease)}
+    .mob-btn:hover{border-color:var(--border-hover);color:var(--text)}
+    .mob-btn.pri{background:var(--primary);border-color:transparent;color:#fff}
+    .mob-btn:disabled{opacity:.25;cursor:not-allowed}
+    .mob-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:.2rem}
+    .mob-top{display:flex;align-items:center;justify-content:space-between}
+    .mob-ch-lbl{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+    .mob-ch-name{font-family:var(--display);font-size:.75rem;font-weight:600;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .mob-prog{height:2px;background:var(--surface-3);border-radius:9999px;overflow:hidden}
+    .mob-prog-bar{height:100%;background:linear-gradient(90deg,var(--primary),var(--teal));border-radius:9999px;transition:width .4s}
+
+    /* Sidebar toggle & overlay */
+    .mob-tog{display:none}
+    .s-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:45}
+    .s-ov.on{display:block}
+
+    /* Animations */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+    .shake{animation:shake .35s ease}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .side{position:fixed;top:56px;left:-100vw;width:min(300px,88vw);height:calc(100dvh - 56px);z-index:46;transition:left .3s cubic-bezier(.4,0,.2,1)}
+      .side.open{left:0;box-shadow:12px 0 40px rgba(0,0,0,.5)}
+      .mob-tog{display:flex}
+      .mob-nav{display:flex}
+      .main{padding:1rem 1rem 5rem}
+      .hdr-prog{display:none}
+      .hdr{padding:0 .75rem;gap:.5rem}
+      .hdr-tag{display:none}
+    }
+    @media(max-width:480px){
+      .lesson h2{font-size:1.1rem}
+      .lesson-btns{width:100%}
+      .btn-mark,.btn-next{flex:1;justify-content:center;padding:.6rem .75rem}
+      .lc{padding:2rem 1.25rem}
+      .lc h1{font-size:1.6rem}
+      .play-btn{width:52px;height:52px}
+      .v-ov-title{font-size:.9rem}
+    }
+  </style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="glow" style="width:50vw;height:50vw;background:radial-gradient(circle,rgba(0,112,243,.1),transparent 70%);top:-20%;left:-15%"></div>
+<div class="glow" style="width:38vw;height:38vw;background:radial-gradient(circle,rgba(121,40,202,.07),transparent 70%);bottom:0;right:-10%"></div>
+
+<!-- ═══ LOGIN ═══ -->
+<div id="login">
+  <div class="lc glass">
+    <div class="lc-logo">
+      <svg viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg" width="180" height="45">
+        <text x="200" y="50" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="48" letter-spacing="-0.04em">
+          <tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan>
+        </text>
+      </svg>
+    </div>
+    <div class="lc-badge"><span class="lc-dot"></span>Client Access</div>
+    <h1>Shopify<br><span>Mastery Course</span></h1>
+    <p class="lc-sub">Enter your password to access your private Shopify training.</p>
+    <div class="pw-wrap">
+      <span class="material-symbols-outlined ico">lock</span>
+      <input type="password" id="pw" class="pw-inp" placeholder="Enter access password" autocomplete="current-password">
+      <button class="pw-tog" onclick="togglePw()" type="button"><span class="material-symbols-outlined" id="pw-eye" style="font-size:18px">visibility</span></button>
+    </div>
+    <div class="lc-err" id="err"><span class="material-symbols-outlined" style="font-size:14px">error</span>Incorrect password.</div>
+    <button class="lc-btn" onclick="doLogin()">Access Course →</button>
+  </div>
+</div>
+
+<!-- ═══ COURSE ═══ -->
+<div id="app">
+  <header class="hdr">
+    <a class="hdr-logo" href="#" onclick="return false">
+      <svg viewBox="0 0 320 78" fill="none" xmlns="http://www.w3.org/2000/svg" width="110" height="32">
+        <text x="160" y="39" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="38" letter-spacing="-0.04em">
+          <tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan>
+        </text>
+      </svg>
+    </a>
+    <div class="hdr-tag"><span class="material-symbols-outlined" style="font-size:10px;font-variation-settings:'FILL' 1">school</span>Course</div>
+    <div class="hdr-space"></div>
+    <div class="hdr-prog">
+      <span id="prog-txt">0 / 6</span>
+      <div class="prog-track"><div class="prog-bar" id="prog-bar" style="width:0%"></div></div>
+    </div>
+    <button class="hdr-btn mob-tog" onclick="togSide()"><span class="material-symbols-outlined" style="font-size:14px">menu</span></button>
+    <button class="hdr-btn" onclick="doLogout()"><span class="material-symbols-outlined" style="font-size:13px">logout</span></button>
+  </header>
+
+  <div class="s-ov" id="s-ov" onclick="closeSide()"></div>
+
+  <div class="layout">
+    <aside class="side" id="side">
+      <div class="side-hd">
+        <div class="side-lbl">Course</div>
+        <div class="side-name">Shopify Store Management</div>
+      </div>
+      <div class="ch-list" id="ch-list"></div>
+    </aside>
+
+    <main class="main" id="main-area">
+      <div class="player">
+        <div class="player-ar">
+          <iframe id="yt" src="" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;fullscreen" allowfullscreen></iframe>
+          <div class="v-ov" id="v-ov" onclick="playVid()">
+            <div class="play-btn"><div class="play-tri"></div></div>
+            <div class="v-ov-title" id="v-title"></div>
+            <div class="v-ov-sub" id="v-sub"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-tag"><span class="material-symbols-outlined" style="font-size:9px;font-variation-settings:'FILL' 1">play_circle</span><span id="l-num">Lesson 1 of 6</span></div>
+        <h2 id="l-title"></h2>
+        <p id="l-desc"></p>
+        <div class="lesson-btns">
+          <button class="btn-mark" id="btn-mark" onclick="markDone()">
+            <span class="material-symbols-outlined" style="font-size:13px">check_circle</span>
+            <span id="mark-txt">Mark Complete</span>
+          </button>
+          <button class="btn-next" id="btn-next" onclick="nextCh()">
+            Next <span class="material-symbols-outlined" style="font-size:13px">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Mobile bottom nav -->
+  <div class="mob-nav" id="mob-nav">
+    <button class="mob-btn" id="mob-prev" onclick="if(cur>0)loadCh(cur-1)"><span class="material-symbols-outlined" style="font-size:16px">chevron_left</span></button>
+    <div class="mob-info">
+      <div class="mob-top">
+        <span class="mob-ch-lbl" id="mob-lbl">Chapter 1</span>
+        <span class="mob-ch-lbl" id="mob-cnt">0/6</span>
+      </div>
+      <div class="mob-prog"><div class="mob-prog-bar" id="mob-bar" style="width:0%"></div></div>
+      <span class="mob-ch-name" id="mob-name"></span>
+    </div>
+    <button class="mob-btn pri" id="mob-next" onclick="if(cur<CHS.length-1)loadCh(cur+1)"><span class="material-symbols-outlined" style="font-size:16px">chevron_right</span></button>
+  </div>
+</div>
+
+<script>
+const PASS='ecomdev2024';
+
+const CHS=[
+  {title:'Navigating Your Admin & Sidekick',desc:'Gain confidence navigating your Shopify admin dashboard and using Sidekick, your AI assistant, to set up your new store.',vid:'HrtnQ1TljpQ'},
+  {title:'Adding & Managing Products',desc:'Learn to add and manage products, create compelling listings, and use Shopify Sidekick to enhance your ecommerce store.',vid:'-RLrd2oPD9A'},
+  {title:'Designing Your Storefront',desc:'Design your unique online storefront by selecting and customizing themes, leveraging AI-powered generation, and setting up your custom domain.',vid:'-LLK3L30nBQ'},
+  {title:'Shipping & Delivery Setup',desc:'Configure essential shipping and delivery options for your store, from setting rates to understanding shipping profiles and international markets.',vid:'3P_pmY9kURE'},
+  {title:'Payments & Checkout',desc:'Set up secure and efficient payment systems, including Shopify Payments, to provide a seamless checkout experience for your customers.',vid:'cSf77ssKzfI'},
+  {title:'A Day as an eCom Manager',desc:'Follow Kaycee, an eCom manager. See what a typical day looks like in Shopify, and what is essential to her role.',vid:'Oqcww4vLUnM'}
+];
+
+let cur=0,done=new Set(),started=false;
+
+// Login
+function doLogin(){
+  if(document.getElementById('pw').value.trim()===PASS){
+    document.getElementById('err').classList.remove('show');
+    document.getElementById('login').classList.add('out');
+    document.getElementById('app').classList.add('on');
+    loadCh(0);renderSidebar();
+  }else{
+    document.getElementById('err').classList.add('show');
+    const f=document.getElementById('pw');f.classList.add('shake');
+    setTimeout(()=>f.classList.remove('shake'),400);
+  }
+}
+function doLogout(){
+  document.getElementById('app').classList.remove('on');
+  document.getElementById('login').classList.remove('out');
+  document.getElementById('pw').value='';
+  document.getElementById('err').classList.remove('show');
+  document.getElementById('yt').src='';started=false;
+}
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
+function togglePw(){
+  const f=document.getElementById('pw'),i=document.getElementById('pw-eye');
+  if(f.type==='password'){f.type='text';i.textContent='visibility_off'}
+  else{f.type='password';i.textContent='visibility'}
+}
+
+// Sidebar
+function renderSidebar(){
+  document.getElementById('ch-list').innerHTML=CHS.map((c,i)=>`
+    <div class="ch ${i===cur?'on':''} ${done.has(i)?'ok':''}" onclick="loadCh(${i})" role="button" tabindex="0">
+      <div class="ch-n">${done.has(i)?'<span class="material-symbols-outlined" style="font-size:14px;font-variation-settings:\'FILL\' 1">check</span>':(i+1)}</div>
+      <div class="ch-t">${c.title}</div>
+      <span class="material-symbols-outlined ch-ok" style="font-variation-settings:'FILL' 1">check_circle</span>
+    </div>
+  `).join('');
+  updateMob();
+}
+
+function loadCh(i){
+  cur=i;started=false;
+  const c=CHS[i],isLocal=location.protocol==='file:';
+  const ov=document.getElementById('v-ov');
+  ov.classList.remove('hide');
+
+  if(isLocal){
+    document.getElementById('yt').style.display='none';
+    document.getElementById('yt').src='';
+    ov.onclick=null;
+    ov.innerHTML=`
+      <div style="text-align:center;padding:1.5rem;max-width:380px;animation:fadeUp .3s ease">
+        <span class="material-symbols-outlined" style="font-size:36px;color:var(--primary);margin-bottom:.6rem">info</span>
+        <div style="font-family:var(--display);font-size:1rem;font-weight:600;color:#fff;margin-bottom:.4rem">Local Preview</div>
+        <div style="font-size:.78rem;color:var(--text-2);line-height:1.5;margin-bottom:1rem">YouTube embeds require a web server. This player works once published online.</div>
+        <a href="https://www.youtube.com/watch?v=${c.vid}" target="_blank" class="btn-next" style="display:inline-flex;text-decoration:none;padding:.6rem 1rem">
+          Watch on YouTube <span class="material-symbols-outlined" style="font-size:13px">open_in_new</span>
+        </a>
+      </div>`;
+  }else{
+    document.getElementById('yt').style.display='block';
+    document.getElementById('yt').src=`https://www.youtube-nocookie.com/embed/${c.vid}?rel=0&modestbranding=1&iv_load_policy=3&color=white`;
+    ov.onclick=playVid;
+    ov.innerHTML=`<div class="play-btn"><div class="play-tri"></div></div><div class="v-ov-title">${c.title}</div><div class="v-ov-sub">Chapter ${i+1} of ${CHS.length}</div>`;
+  }
+
+  document.getElementById('l-num').textContent=`Lesson ${i+1} of ${CHS.length}`;
+  document.getElementById('l-title').textContent=c.title;
+  document.getElementById('l-desc').textContent=c.desc;
+
+  const bm=document.getElementById('btn-mark'),mt=document.getElementById('mark-txt');
+  if(done.has(i)){bm.classList.add('done');mt.textContent='✓ Completed'}
+  else{bm.classList.remove('done');mt.textContent='Mark Complete'}
+
+  document.getElementById('btn-next').disabled=(i>=CHS.length-1);
+  window.scrollTo({top:0,behavior:'smooth'});
+  renderSidebar();closeSide();updateProg();
+}
+
+function playVid(){
+  if(started||location.protocol==='file:')return;
+  started=true;
+  document.getElementById('v-ov').classList.add('hide');
+  const c=CHS[cur];
+  document.getElementById('yt').src=`https://www.youtube-nocookie.com/embed/${c.vid}?rel=0&modestbranding=1&iv_load_policy=3&color=white&autoplay=1`;
+}
+
+function updateProg(){
+  const n=done.size,t=CHS.length;
+  document.getElementById('prog-txt').textContent=`${n} / ${t}`;
+  document.getElementById('prog-bar').style.width=`${(n/t)*100}%`;
+  document.getElementById('mob-cnt').textContent=`${n}/${t}`;
+  document.getElementById('mob-bar').style.width=`${(n/t)*100}%`;
+}
+function updateMob(){
+  const c=CHS[cur];
+  document.getElementById('mob-lbl').textContent=`Chapter ${cur+1}`;
+  document.getElementById('mob-name').textContent=c.title;
+  document.getElementById('mob-prev').disabled=cur<=0;
+  document.getElementById('mob-next').disabled=cur>=CHS.length-1;
+}
+function markDone(){
+  if(done.has(cur)){done.delete(cur);document.getElementById('btn-mark').classList.remove('done');document.getElementById('mark-txt').textContent='Mark Complete'}
+  else{done.add(cur);document.getElementById('btn-mark').classList.add('done');document.getElementById('mark-txt').textContent='✓ Completed'}
+  renderSidebar();updateProg();
+}
+function nextCh(){if(cur<CHS.length-1)loadCh(cur+1)}
+
+function togSide(){document.getElementById('side').classList.toggle('open');document.getElementById('s-ov').classList.toggle('on')}
+function closeSide(){document.getElementById('side').classList.remove('open');document.getElementById('s-ov').classList.remove('on')}
+
+// Swipe
+let tx=0;
+document.addEventListener('touchstart',e=>{tx=e.changedTouches[0].screenX},{passive:true});
+document.addEventListener('touchend',e=>{const d=e.changedTouches[0].screenX-tx;if(d>50&&tx<30)togSide();if(d<-50)closeSide()},{passive:true});
+
+// Keyboard nav
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('app').classList.contains('on'))return;
+  if(e.key==='ArrowRight'&&cur<CHS.length-1)nextCh();
+  if(e.key==='ArrowLeft'&&cur>0)loadCh(cur-1);
+});
+</script>
+</body>
+</html>
