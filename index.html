@@ -1,13 +1,15 @@
 <!DOCTYPE html><html class="dark" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>{ ecomdev } | Shopify Ecommerce Development Agency</title>
-<meta name="description" content="We design and build high-performance Shopify stores engineered for speed, conversions, and seamless scaling. Trusted by ecommerce brands worldwide.">
+<title>ecomdev</title>
+<meta name="description" content="Your products deserve a store as premium as your brand. We build high-conversion Shopify stores that match the biggest brands — for a fraction of the price. Official Shopify Partner.">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+<script src="main.js"></script>
 <script id="tailwind-config">
   tailwind.config = {
     darkMode: "class",
@@ -81,11 +83,60 @@
     .phone-home-indicator { position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 112px; height: 4px; background: rgba(255,255,255,0.35); border-radius: 9999px; z-index: 20; pointer-events: none; }
   }
 
-  /* Cart Animations */
-  @keyframes cartFloat { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-9px)} }
-  @keyframes cartDraw { to{stroke-dashoffset:0} }
-  @keyframes cartItemIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
-  @keyframes ambientPulse { 0%,100%{opacity:0.5;transform:scale(1)} 50%{opacity:1;transform:scale(1.1)} }
+  /* Hero Heading — typewriter effect */
+  @keyframes heroFadeUp {
+    from { opacity:0; transform:translateY(20px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @keyframes caretBlink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  @keyframes caretFadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+  @keyframes heroBadgeFade {
+    from { opacity:0; transform:translateY(-8px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .hero-eyebrow {
+    opacity: 0;
+    animation: heroBadgeFade 0.7s cubic-bezier(0.22,1,0.36,1) 0.05s forwards;
+  }
+  .hero-line-1 {
+    display: block;
+    opacity: 0;
+    animation: heroFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.3s forwards;
+  }
+  .hero-typewriter {
+    display: inline;
+    background: linear-gradient(100deg, #60a5fa 0%, #38bdf8 40%, #34d399 80%, #60a5fa 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s linear 1.5s infinite;
+  }
+  @keyframes gradientShift {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+  .hero-caret {
+    display: inline-block;
+    width: 3px;
+    height: 0.85em;
+    background: #38bdf8;
+    border-radius: 2px;
+    margin-left: 4px;
+    vertical-align: middle;
+    position: relative;
+    top: -0.05em;
+    animation: caretBlink 0.9s step-end infinite;
+  }
+  .hero-caret.done {
+    animation: caretFadeOut 0.5s ease 1.2s forwards;
+  }
 
   /* Process Animations */
   @keyframes processCardIn { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
@@ -150,47 +201,39 @@
 
 <!-- ═══════════════════════════════════════════════════ HERO ══ -->
 <section class="relative px-6 md:px-8 max-w-7xl mx-auto min-h-[60vh] sm:min-h-[70vh] md:min-h-[700px] flex flex-col items-center justify-center text-center py-10 pb-6 md:py-20 z-10">
-  <div class="relative z-10 logo-animate mb-10 flex items-center justify-center" style="margin:0 auto;">
-    <div style="position:absolute;width:200px;height:160px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,112,243,0.18) 0%,rgba(121,40,202,0.1) 45%,transparent 70%);filter:blur(8px);animation:ambientPulse 4s ease-in-out infinite;"></div>
-    <svg width="148" height="130" viewBox="0 0 148 130" xmlns="http://www.w3.org/2000/svg" style="animation:cartFloat 3.2s ease-in-out infinite; filter: drop-shadow(0 4px 12px rgba(0,112,243,0.3));">
-      <defs>
-        <linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0070F3"/><stop offset="50%" stop-color="#7928CA"/><stop offset="100%" stop-color="#48ddbc"/></linearGradient>
-        <linearGradient id="cg-fill" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="rgba(0,112,243,0.1)"/><stop offset="100%" stop-color="rgba(121,40,202,0.05)"/></linearGradient>
-        <linearGradient id="cg-item1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="rgba(0,112,243,0.85)"/><stop offset="100%" stop-color="rgba(121,40,202,0.7)"/></linearGradient>
-        <linearGradient id="cg-item2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="rgba(121,40,202,0.75)"/><stop offset="100%" stop-color="rgba(72,221,188,0.7)"/></linearGradient>
-        <linearGradient id="cg-item3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="rgba(72,221,188,0.7)"/><stop offset="100%" stop-color="rgba(0,112,243,0.6)"/></linearGradient>
-      </defs>
-      <path d="M 34,30 H 118 L 110,82 H 36 Z" fill="url(#cg-fill)"/>
-      <polyline points="6,18 26,18 34,30 118,30 110,82 36,82 28,30" fill="none" stroke="url(#cg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="500" stroke-dashoffset="500" style="animation:cartDraw 1.6s cubic-bezier(0.4,0,0.2,1) forwards;"/>
-      <circle cx="52" cy="98" r="10" fill="none" stroke="url(#cg)" stroke-width="4.5" stroke-dasharray="64" stroke-dashoffset="64" style="animation:cartDraw 0.9s ease forwards; animation-delay:1.5s;"/>
-      <circle cx="52" cy="98" r="3" fill="url(#cg)" opacity="0" style="animation:cartItemIn 0.4s ease forwards; animation-delay:2.3s;"/>
-      <circle cx="96" cy="98" r="10" fill="none" stroke="url(#cg)" stroke-width="4.5" stroke-dasharray="64" stroke-dashoffset="64" style="animation:cartDraw 0.9s ease forwards; animation-delay:1.7s;"/>
-      <circle cx="96" cy="98" r="3" fill="url(#cg)" opacity="0" style="animation:cartItemIn 0.4s ease forwards; animation-delay:2.4s;"/>
-      <rect x="42" y="40" width="22" height="18" rx="4" fill="url(#cg-item1)" opacity="0" style="animation:cartItemIn 0.5s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay:2.0s;"/>
-      <rect x="70" y="40" width="22" height="18" rx="4" fill="url(#cg-item2)" opacity="0" style="animation:cartItemIn 0.5s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay:2.2s;"/>
-      <rect x="52" y="62" width="44" height="13" rx="4" fill="url(#cg-item3)" opacity="0" style="animation:cartItemIn 0.5s cubic-bezier(0.22,1,0.36,1) forwards; animation-delay:2.4s;"/>
-    </svg>
-  </div>
 
-  <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-primary-container/10 border border-primary-container/25 rounded-full">
-    <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
-    <span class="font-label-sm text-[10px] sm:text-label-sm text-on-surface-variant uppercase tracking-widest">Shopify Ecommerce Development</span>
+  <!-- Shopify Partner badge -->
+  <div class="hero-eyebrow flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mb-7">
+    <!-- Shopify leaf icon + Partner label -->
+    <span class="flex items-center gap-2">
+      <!-- Shopify logo mark -->
+      <svg width="18" height="20" viewBox="0 0 38 43" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Shopify">
+        <path d="M32.8 8.3c0-.2-.2-.3-.4-.3-.2 0-3.4-.3-3.4-.3s-2.3-2.2-2.5-2.4c-.2-.2-.7-.1-.9-.1l-1.3.4C23.6 4 22.5 2.8 20.5 2.8c-.1 0-.3 0-.4.1C19.5 1.6 18.4 1 17.5 1c-5.5 0-8.2 6.9-9 10.4l-3.9 1.2c-1.2.4-1.3.4-1.4 1.5L1 36.5 26.5 41 38 38.2 32.8 8.3zM22.5 6.5l-2.1.7c0-.2 0-.4-.1-.6-.3-1.6-1-2.5-1.7-2.9 1.7.1 2.9 1.8 3.9 2.8zm-4.7-2.7c.8.4 1.5 1.4 1.8 3l-4.4 1.4c.8-3 2.5-4.2 2.6-4.4zm-2.8-.3c.1 0 .2 0 .3.1-.1 0-2.5 1.2-3.4 4.7l-2.6.8C10.4 5.6 12.8 3.5 15 3.5z" fill="#95BF47"/>
+        <path d="M32.4 8c-.2 0-3.4-.3-3.4-.3s-2.3-2.2-2.5-2.4c-.1-.1-.2-.1-.3-.1L26.5 41l11.5-2.8L32.4 8z" fill="#5E8E3E"/>
+        <path d="M20.5 16.2l-1.4 4.3s-1.2-.7-2.8-.7c-2.2 0-2.3 1.4-2.3 1.8 0 1.9 5 2.7 5 7.2 0 3.6-2.3 5.9-5.3 5.9-3.7 0-5.5-2.3-5.5-2.3l1-3.2s1.9 1.6 3.5 1.6c1 0 1.5-.8 1.5-1.4 0-2.5-4.1-2.6-4.1-6.7 0-3.4 2.5-6.8 7.4-6.8 1.9.1 2.9.3 3 .3z" fill="#fff"/>
+      </svg>
+      <span class="font-label-sm text-[10px] sm:text-label-sm font-semibold" style="color:#95BF47;letter-spacing:0.07em;">Official Shopify Partner</span>
+    </span>
+    <span style="width:1px;height:14px;background:rgba(255,255,255,0.12);display:inline-block;" class="hidden sm:inline-block"></span>
+    <span class="font-label-sm text-[10px] sm:text-label-sm text-on-surface-variant" style="letter-spacing:0.07em;">50+ Brands Launched</span>
+    <span style="width:1px;height:14px;background:rgba(255,255,255,0.12);display:inline-block;"></span>
+    <span class="font-label-sm text-[10px] sm:text-label-sm text-on-surface-variant" style="letter-spacing:0.07em;">Zero Brand Compromises</span>
   </div>
 
   <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-2xl md:text-display-2xl text-on-surface mb-6 leading-tight">
-    High-Conversion<br>
-    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-on-surface-variant italic font-light pr-[0.15em]">Shopify Stores</span>
+    <span class="hero-line-1 block">Your Brand Deserves</span>
+    <span id="hero-shimmer-text"></span>
   </h1>
   <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-3">
-    We design and build high-performance Shopify stores that convert visitors into loyal customers, engineered for sub-second speeds and custom merchant flexibility.
+    You've built something people love. Now give it the online home it deserves — a Shopify store that looks as premium as the biggest brands, without the price tag or the complexity.
   </p>
   <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mt-8">
     <a href="contact.html" class="w-full max-w-[280px] sm:w-auto px-8 py-4 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:bg-inverse-primary transition-all duration-300 font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-      Start Your Project
+      Get a Free Consultation
       <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
     </a>
     <a href="portfolio.html" class="w-full max-w-[280px] sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-on-surface font-label-sm text-label-sm rounded-lg hover:bg-white/10 transition-all duration-300 font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-      View Our Work
+      See What We Build
       <span class="material-symbols-outlined text-[18px]">visibility</span>
     </a>
   </div>
@@ -201,10 +244,10 @@
   <div class="glass-panel rounded-2xl border border-white/5 px-4 sm:px-8 py-8 sm:py-10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
     <div class="stat-item flex flex-col items-center gap-1 text-center border-r border-white/5 last:border-0" style="animation-delay:0.1s">
       <span class="font-display-lg-mobile text-[36px] md:text-[48px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container leading-none">50+</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">Projects Delivered</span>
+      <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">Brands Taken Online</span>
     </div>
     <div class="stat-item flex flex-col items-center gap-1 text-center border-r border-white/5 last:border-0" style="animation-delay:0.2s">
-      <span class="font-display-lg-mobile text-[36px] md:text-[48px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-tertiary leading-none">$2M+</span>
+      <span class="font-display-lg-mobile text-[36px] md:text-[48px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-tertiary leading-none">$15M+</span>
       <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">Revenue Generated</span>
     </div>
     <div class="stat-item flex flex-col items-center gap-1 text-center border-r border-white/5 last:border-0" style="animation-delay:0.3s">
@@ -212,8 +255,8 @@
       <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">Countries Served</span>
     </div>
     <div class="stat-item flex flex-col items-center gap-1 text-center" style="animation-delay:0.4s">
-      <span class="font-display-lg-mobile text-[36px] md:text-[48px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary-container to-secondary leading-none">99</span>
-      <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">Avg. PageSpeed Score</span>
+      <span class="font-display-lg-mobile text-[36px] md:text-[48px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary-container to-secondary leading-none">100%</span>
+      <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">Satisfaction Guarantee</span>
     </div>
   </div>
 </section>
@@ -221,7 +264,7 @@
 <!-- ═══════════════════════════════════════════════════ WORKS ══ -->
 <section id="works" class="relative px-6 md:px-8 max-w-7xl mx-auto py-10 sm:py-16 md:py-20 z-10">
   <div class="mb-8 flex flex-col md:flex-row items-center gap-4">
-    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface w-full text-center md:text-left">Selected Works <span class="text-primary-container opacity-50">//</span> Portfolio</h2>
+    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface w-full text-center md:text-left">Real Stores We've Built <span class="text-primary-container opacity-50">//</span> See the Standard</h2>
     <div class="h-[1px] bg-white/10 flex-grow w-full hidden md:block"></div>
     <a href="portfolio.html" class="hidden md:flex items-center gap-1 text-primary-container font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors whitespace-nowrap">View All <span class="material-symbols-outlined text-[16px]">arrow_right_alt</span></a>
   </div>
@@ -244,7 +287,7 @@
           <span class="px-2.5 py-1 bg-white/5 border border-white/15 rounded-full text-[10px] font-label-sm text-on-surface-variant tracking-wider">CRO</span>
         </div>
         <h3 class="font-headline-md text-[24px] text-on-surface mb-2">Popadelics</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Bold, immersive storefront for Popadelics' mushroom chips. Eye-catching visual design paired with a frictionless buying experience engineered to convert.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">A bold, premium storefront that makes Popadelics stand out in a crowded snack category. Proof that the right store turns a great product into a category leader online.</p>
         <div class="flex flex-col md:flex-row items-center justify-between border-t border-white/5 pt-4 mt-auto gap-4 md:gap-0">
           <div class="flex gap-4 font-label-sm text-[11px] text-outline justify-center"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">bolt</span> High CVR</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">storefront</span> OS 2.0</span></div>
           <a href="https://www.popadelics.com/" target="_blank" rel="noopener noreferrer" class="text-primary-container font-label-sm text-label-sm uppercase tracking-wider group-hover:text-primary transition-colors flex items-center gap-1">View Project <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span></a>
@@ -269,7 +312,7 @@
           <span class="px-2.5 py-1 bg-white/5 border border-white/15 rounded-full text-[10px] font-label-sm text-on-surface-variant tracking-wider">Beauty & Wellness</span>
         </div>
         <h3 class="font-headline-md text-[24px] text-on-surface mb-2">Apotecari</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Elegant, conversion-focused storefront for Apotecari's premium hair wellness brand. Clean editorial layout designed to build trust and drive subscriptions.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Apotecari trusted us to match their premium brand online — and the result looks indistinguishable from the world's top wellness labels. Your product, your brand, elevated.</p>
         <div class="flex flex-col md:flex-row items-center justify-between border-t border-white/5 pt-4 mt-auto gap-4 md:gap-0">
           <div class="flex gap-4 font-label-sm text-[11px] text-outline justify-center"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">spa</span> Wellness</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">bolt</span> Fast Load</span></div>
           <a href="https://apotecari.co/" target="_blank" rel="noopener noreferrer" class="text-primary-container font-label-sm text-label-sm uppercase tracking-wider group-hover:text-primary transition-colors flex items-center gap-1">View Project <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span></a>
@@ -285,7 +328,7 @@
 <!-- ═══════════════════════════════════════════════════ CAPABILITIES ══ -->
 <section class="relative px-6 md:px-8 max-w-7xl mx-auto py-10 sm:py-16 md:py-20 z-10">
   <div class="mb-8 flex flex-col md:flex-row items-center gap-4">
-    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface w-full text-center md:text-left reveal">Capabilities <span class="text-primary-container opacity-50">//</span> Services</h2>
+    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface w-full text-center md:text-left reveal">Everything You Need <span class="text-primary-container opacity-50">//</span> We Handle It All</h2>
     <div class="h-[1px] bg-white/10 flex-grow w-full hidden md:block"></div>
     <a href="services.html" class="hidden md:flex items-center gap-1 text-primary-container font-label-sm text-label-sm uppercase tracking-wider hover:text-primary transition-colors whitespace-nowrap">All Services <span class="material-symbols-outlined text-[16px]">arrow_right_alt</span></a>
   </div>
@@ -295,36 +338,36 @@
     <div class="glass-panel p-8 rounded-xl gradient-border-hover md:col-span-2 relative overflow-hidden flex flex-col items-center md:items-start text-center md:text-left reveal">
       <div class="absolute right-0 top-0 opacity-10 pointer-events-none"><span class="material-symbols-outlined text-[120px]">storefront</span></div>
       <span class="material-symbols-outlined text-primary-container text-[32px] mb-4">storefront</span>
-      <h3 class="font-headline-md text-[24px] text-on-surface mb-2">Custom Shopify Development</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Bespoke OS 2.0 theme builds, Liquid customization, and tailored admin features to match your exact brand guidelines and scaling needs.</p>
+      <h3 class="font-headline-md text-[24px] text-on-surface mb-2">A Store That Looks as Premium as Your Brand</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-md">We build custom Shopify stores from scratch — not generic templates. Your brand, your identity, your vision; built to the same standard as the biggest names in your industry.</p>
       <div class="flex gap-2 mt-4 flex-wrap justify-center md:justify-start">
-        <span class="px-2.5 py-1 bg-primary-container/10 border border-primary-container/25 rounded-full text-[10px] font-label-sm text-primary-container">Custom Themes</span>
-        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-label-sm text-on-surface-variant">Liquid Coding</span>
-        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-label-sm text-on-surface-variant">OS 2.0 Sections</span>
+        <span class="px-2.5 py-1 bg-primary-container/10 border border-primary-container/25 rounded-full text-[10px] font-label-sm text-primary-container">Custom Design</span>
+        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-label-sm text-on-surface-variant">Built to Convert</span>
+        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-label-sm text-on-surface-variant">Mobile-First</span>
       </div>
     </div>
     <!-- Shopify Migrations -->
     <div class="bg-surface-container-low border border-white/5 p-8 rounded-xl relative overflow-hidden flex flex-col items-center md:items-start text-center md:text-left reveal">
       <span class="material-symbols-outlined text-tertiary text-[32px] mb-4">swap_horiz</span>
-      <h3 class="font-headline-md text-[20px] text-on-surface mb-2">Seamless Migrations</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant text-sm">Hassle-free re-platforming from WooCommerce, Magento, or custom setups to Shopify with zero data loss or SEO drops.</p>
+      <h3 class="font-headline-md text-[20px] text-on-surface mb-2">We Handle All the Tech</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant text-sm">Already selling somewhere else? We move everything over to Shopify — the world's #1 ecommerce platform — so you don't lose a single order, customer, or ranking.</p>
     </div>
     <!-- Headless Shopify -->
     <div class="bg-surface-container-low border border-white/5 p-8 rounded-xl relative overflow-hidden flex flex-col items-center md:items-start text-center md:text-left reveal">
       <span class="material-symbols-outlined text-[32px] mb-4" style="color:#7928CA">code</span>
-      <h3 class="font-headline-md text-[20px] text-on-surface mb-2">Headless Commerce</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant text-sm">Blazing-fast Hydrogen and Next.js custom storefronts connected to Shopify's backend for enterprise brands.</p>
+      <h3 class="font-headline-md text-[20px] text-on-surface mb-2">Big-Brand Performance</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant text-sm">For brands that want the fastest, most premium online experience possible — the kind that makes competitors look amateur by comparison.</p>
     </div>
     <!-- Shopify Integrations & CRO -->
     <div class="glass-panel p-8 rounded-xl gradient-border-hover md:col-span-2 relative overflow-hidden flex flex-col items-center md:items-start text-center md:text-left reveal">
       <div class="absolute right-0 top-0 opacity-10 pointer-events-none"><span class="material-symbols-outlined text-[120px]">sync_alt</span></div>
       <span class="material-symbols-outlined text-tertiary text-[32px] mb-4">sync_alt</span>
-      <h3 class="font-headline-md text-[24px] text-on-surface mb-2">Systems & Optimization</h3>
-      <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Integrating 3PL logistics, ERPs, multi-currency checkout/BNPL systems, email automation, and Core Web Vitals speed tuning.</p>
+      <h3 class="font-headline-md text-[24px] text-on-surface mb-2">We Manage It So You Don't Have To</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Payments, inventory, order management, email automation — we connect every piece and hand you a store that runs itself. No tech headaches. We're your growth partner, not just a developer.</p>
       <div class="flex gap-2 mt-4 flex-wrap justify-center md:justify-start">
-        <span class="px-2.5 py-1 bg-tertiary/10 border border-tertiary/25 rounded-full text-[10px] font-label-sm text-tertiary">3PL Logistics</span>
-        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-label-sm text-on-surface-variant">BNPL & FX</span>
-        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-label-sm text-on-surface-variant">PageSpeed (CRO)</span>
+        <span class="px-2.5 py-1 bg-tertiary/10 border border-tertiary/25 rounded-full text-[10px] font-label-sm text-tertiary">Payments & BNPL</span>
+        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-label-sm text-on-surface-variant">Order Automation</span>
+        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-label-sm text-on-surface-variant">Email & Growth</span>
       </div>
     </div>
   </div>
@@ -336,9 +379,9 @@
 <!-- ═══════════════════════════════════════════════════ PROCESS PREVIEW ══ -->
 <section id="process" class="relative px-6 md:px-8 max-w-7xl mx-auto py-10 sm:py-16 md:py-20 z-10">
   <div class="mb-14 text-center">
-    <p class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.25em] mb-3">How We Work</p>
-    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-4 reveal">Our Process</h2>
-    <p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">A methodical, rigorous approach to every Shopify build — from strategy to launch.</p>
+    <p class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.25em] mb-3">Simple. Clear. Guided.</p>
+    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-4 reveal">You Never Have to Figure This Out Alone</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">We guide you through every step — from your first call to launch day and beyond. You focus on your business. We handle everything else.</p>
   </div>
   <div class="relative max-w-xl mx-auto flex flex-col gap-0">
     <div class="absolute left-[28px] top-[56px] bottom-[56px] w-[2px] bg-white/5 overflow-hidden rounded-full"><div id="process-line" class="process-line-fill w-full rounded-full"></div></div>
@@ -349,8 +392,8 @@
       </div>
       <div class="flex-1 glass-panel rounded-xl p-5 border border-white/5">
         <div class="flex items-center gap-3 mb-2"><span class="font-label-sm text-[10px] text-primary-container tracking-widest">01</span><div class="h-[1px] flex-1 bg-primary-container/20"></div></div>
-        <h3 class="font-headline-md text-[20px] text-on-surface mb-2">Strategy & Scoping</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">Shopify architecture mapping, performance budgeting, and integration scoping to define a clean technical blueprint.</p>
+        <h3 class="font-headline-md text-[20px] text-on-surface mb-2">We Learn Your Brand & Vision</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">We start by understanding your business, your products, and how your competitors look online — then map out exactly how we'll make your store blow them all out of the water.</p>
       </div>
     </div>
     <!-- Step 2 -->
@@ -360,8 +403,8 @@
       </div>
       <div class="flex-1 glass-panel rounded-xl p-5 border border-white/5">
         <div class="flex items-center gap-3 mb-2"><span class="font-label-sm text-[10px] tracking-widest" style="color:#7928CA">02</span><div class="h-[1px] flex-1" style="background: rgba(121,40,202,0.2)"></div></div>
-        <h3 class="font-headline-md text-[20px] text-on-surface mb-2">Expert Development</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">Bespoke Liquid coding, layout engineering, and logistics/payment API connections optimized for page speed.</p>
+        <h3 class="font-headline-md text-[20px] text-on-surface mb-2">We Build Your Premium Store</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">We design and build your store to look as good as the biggest brands in your space — on Shopify, the same platform they use. You approve every detail before anything goes live.</p>
       </div>
     </div>
     <!-- Step 3 -->
@@ -371,8 +414,8 @@
       </div>
       <div class="flex-1 glass-panel rounded-xl p-5 border border-white/5">
         <div class="flex items-center gap-3 mb-2"><span class="font-label-sm text-[10px] text-tertiary tracking-widest">03</span><div class="h-[1px] flex-1 bg-tertiary/20"></div></div>
-        <h3 class="font-headline-md text-[20px] text-on-surface mb-2">Seamless Launch</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">Rigorous checkout validation, Core Web Vitals testing, and zero-downtime deployment to go live with confidence.</p>
+        <h3 class="font-headline-md text-[20px] text-on-surface mb-2">Launch & We Stay With You</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">We don't hand you a website and disappear. We launch together, monitor performance, and remain your partner long after the store goes live. You'll never be left alone with complex tech.</p>
       </div>
     </div>
   </div>
@@ -384,8 +427,8 @@
 <!-- ═══════════════════════════════════════════════════ TESTIMONIALS ══ -->
 <section class="relative px-6 md:px-8 max-w-7xl mx-auto py-10 sm:py-16 md:py-20 z-10">
   <div class="mb-12 text-center">
-    <p class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.25em] mb-3">Client Feedback</p>
-    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface reveal">Trusted By Ambitious Brands</h2>
+    <p class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.25em] mb-3">Real Results</p>
+    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface reveal">Business Owners Who Took the Leap — And Won</h2>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <div class="testimonial-card p-7 rounded-xl reveal" style="transition-delay:0.1s">
@@ -396,10 +439,10 @@
         <span class="material-symbols-outlined text-[18px]" style="color:#FFD700; font-variation-settings:'FILL' 1;">star</span>
         <span class="material-symbols-outlined text-[18px]" style="color:#FFD700; font-variation-settings:'FILL' 1;">star</span>
       </div>
-      <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-5">"ecomdev transformed our online store into a revenue machine. The logistics integration alone saved us 15 hours a week in manual order processing."</p>
+      <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-5">"I was terrified it would look cheap and damage my brand. It did the exact opposite — customers keep telling me the site looks better than brands they've bought from for years."</p>
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-container to-secondary-container flex items-center justify-center"><span class="font-bold text-white text-[14px]">S</span></div>
-        <div><p class="font-body-md font-semibold text-on-surface text-[14px]">Sarah M.</p><p class="font-label-sm text-label-sm text-outline">Founder, La Sucré</p></div>
+        <div><p class="font-body-md font-semibold text-on-surface text-[14px]">Sara M.</p><p class="font-label-sm text-label-sm text-outline">Founder, La Sucré</p></div>
       </div>
     </div>
     <div class="testimonial-card p-7 rounded-xl reveal" style="transition-delay:0.2s">
@@ -410,10 +453,10 @@
         <span class="material-symbols-outlined text-[18px]" style="color:#FFD700; font-variation-settings:'FILL' 1;">star</span>
         <span class="material-symbols-outlined text-[18px]" style="color:#FFD700; font-variation-settings:'FILL' 1;">star</span>
       </div>
-      <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-5">"The multi-currency and tax automation setup was flawless. We went from one market to six in under a month — total game changer for our expansion."</p>
+      <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-5">"I'd been selling through WhatsApp and Instagram for two years, telling myself I'd 'do a proper website soon.' ecomdev made the whole thing simple — and the results were immediate."</p>
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-tertiary-container to-primary-container flex items-center justify-center"><span class="font-bold text-white text-[14px]">J</span></div>
-        <div><p class="font-body-md font-semibold text-on-surface text-[14px]">James L.</p><p class="font-label-sm text-label-sm text-outline">CEO, The Green Room</p></div>
+        <div><p class="font-body-md font-semibold text-on-surface text-[14px]">James L.</p><p class="font-label-sm text-label-sm text-outline">Owner, The Green Room</p></div>
       </div>
     </div>
     <div class="testimonial-card p-7 rounded-xl reveal" style="transition-delay:0.3s">
@@ -424,10 +467,10 @@
         <span class="material-symbols-outlined text-[18px]" style="color:#FFD700; font-variation-settings:'FILL' 1;">star</span>
         <span class="material-symbols-outlined text-[18px]" style="color:#FFD700; font-variation-settings:'FILL' 1;">star</span>
       </div>
-      <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-5">"Their PageSpeed optimization brought us from 48 to 98. Our bounce rate dropped 35% and conversion went up 2.4x in 60 days. The ROI is undeniable."</p>
+      <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-5">"My competitors all have stores — but none of them look like mine does now. I genuinely feel like I've leapfrogged every single one of them online. Best investment I've made for the business."</p>
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary-container to-tertiary-container flex items-center justify-center"><span class="font-bold text-white text-[14px]">A</span></div>
-        <div><p class="font-body-md font-semibold text-on-surface text-[14px]">Aisha R.</p><p class="font-label-sm text-label-sm text-outline">Director, Nomad Goods</p></div>
+        <div><p class="font-body-md font-semibold text-on-surface text-[14px]">Ahmad R.</p><p class="font-label-sm text-label-sm text-outline">Founder, Nomad Goods</p></div>
       </div>
     </div>
   </div>
@@ -436,9 +479,9 @@
 <!-- ═══════════════════════════════════════════════════ PRICING TEASER ══ -->
 <section id="pricing-preview" class="relative px-6 md:px-8 max-w-7xl mx-auto py-10 sm:py-16 md:py-20 z-10">
   <div class="mb-12 text-center">
-    <p class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.25em] mb-3">Transparent Pricing</p>
-    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-4 reveal">Simple, One-Time Build Fees</h2>
-    <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">No surprises. Pick the plan that fits your ambition — and we'll build it to convert.</p>
+    <p class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.25em] mb-3">Big-Brand Quality. Not a Big-Brand Budget.</p>
+    <h2 class="font-headline-md text-[28px] md:text-headline-md text-on-surface mb-4 reveal">Transparent, One-Time Build Fees</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">No hidden costs. No monthly surprises. One fixed fee and you own a store that competes with brands spending ten times as much.</p>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-5 reveal">
@@ -448,16 +491,15 @@
       <div>
         <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">🚀 Starter</span>
         <div class="flex items-end gap-1.5 mt-2">
-          <span class="font-display-lg-mobile text-[40px] font-bold text-on-surface leading-none">4,999</span>
-          <span class="text-on-surface-variant font-label-sm text-label-sm mb-1">AED</span>
+          <span class="currency-converter font-display-lg-mobile text-[40px] font-bold text-on-surface leading-none" data-amount="4999">4,999 AED</span>
         </div>
         <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest mt-1">one-time</p>
       </div>
       <div class="h-[1px] bg-white/5"></div>
       <ul class="space-y-2 flex-grow">
-        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Conversion-optimised template store</li>
-        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Up to 25 products uploaded</li>
-        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>3 revision rounds</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Professional store, live fast</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Up to 25 products ready to sell</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>3 rounds of revisions</li>
       </ul>
       <a href="services.html#pricing" class="mt-auto text-center px-5 py-2.5 bg-white/5 border border-white/10 text-on-surface font-label-sm text-[10px] rounded-lg hover:bg-white/10 transition-all uppercase tracking-wider font-bold">See Full Plan →</a>
     </div>
@@ -470,15 +512,14 @@
         <span class="px-2.5 py-1 bg-primary-container text-on-primary-container font-label-sm text-[9px] rounded-full uppercase tracking-widest font-bold">Most Popular</span>
       </div>
       <div class="flex items-end gap-1.5">
-        <span class="font-display-lg-mobile text-[40px] font-bold text-on-surface leading-none">7,799</span>
-        <span class="text-on-surface-variant font-label-sm text-label-sm mb-1">AED</span>
+        <span class="currency-converter font-display-lg-mobile text-[40px] font-bold text-on-surface leading-none" data-amount="7799">7,799 AED</span>
       </div>
       <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest -mt-2">one-time</p>
       <div class="h-[1px] bg-primary-container/15"></div>
       <ul class="space-y-2 flex-grow">
-        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Custom-built sections</li>
-        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Industry-researched layout</li>
-        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Unlimited revisions</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Custom sections built around your brand</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Designed for how your customers buy</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Unlimited revisions — until you love it</li>
       </ul>
       <a href="services.html#pricing" class="mt-auto text-center px-5 py-2.5 bg-primary-container text-on-primary-container font-label-sm text-[10px] rounded-lg hover:bg-inverse-primary transition-all uppercase tracking-wider font-bold">See Full Plan →</a>
     </div>
@@ -488,22 +529,21 @@
       <div>
         <span class="font-label-sm text-[10px] text-tertiary uppercase tracking-widest">👑 Elite</span>
         <div class="flex items-end gap-1.5 mt-2">
-          <span class="font-display-lg-mobile text-[40px] font-bold text-on-surface leading-none">11,699</span>
-          <span class="text-on-surface-variant font-label-sm text-label-sm mb-1">AED</span>
+          <span class="currency-converter font-display-lg-mobile text-[40px] font-bold text-on-surface leading-none" data-amount="11699">11,699 AED</span>
         </div>
         <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest mt-1">one-time</p>
       </div>
       <div class="h-[1px] bg-tertiary/10"></div>
       <ul class="space-y-2 flex-grow">
-        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Fully bespoke custom build</li>
-        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Web apps & conversion tools</li>
-        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Full SEO-optimised copy</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>100% bespoke — built from scratch</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Conversion tools that actively drive sales</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-on-surface-variant"><span class="text-tertiary mt-0.5 text-[13px] font-bold flex-shrink-0">✓</span>Full SEO copy — built to rank & convert</li>
       </ul>
       <a href="services.html#pricing" class="mt-auto text-center px-5 py-2.5 rounded-lg font-label-sm text-[10px] font-bold uppercase tracking-wider transition-all" style="background:rgba(72,221,188,0.1);border:1px solid rgba(72,221,188,0.3);color:#48ddbc;">See Full Plan →</a>
     </div>
 
   </div>
-  <p class="text-center font-label-sm text-[11px] text-outline uppercase tracking-widest mt-8">All prices in AED · One-time build fee · No hidden charges</p>
+  <p class="text-center font-label-sm text-[11px] text-outline uppercase tracking-widest mt-8">Prices displayed in your local currency · One-time build fee · No hidden charges</p>
 </section>
 
 <!-- ═══════════════════════════════════════════════════ CTA ══ -->
@@ -512,15 +552,15 @@
     <div class="absolute inset-0 grid-bg opacity-50 pointer-events-none"></div>
     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full" style="background:radial-gradient(ellipse,rgba(0,112,243,0.12) 0%,rgba(121,40,202,0.08) 50%,transparent 70%);filter:blur(30px);pointer-events:none;"></div>
     <div class="relative z-10">
-      <p class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.25em] mb-4">Ready to Scale?</p>
-      <h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-6 reveal">Let's Build Something<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-tertiary">Extraordinary</span></h2>
-      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-10">From bespoke OS 2.0 themes to complex headless storefronts and automated system integrations—we build Shopify stores that convert.</p>
+      <p class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.25em] mb-4">Your Competitors Won't Wait.</p>
+      <h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-6 reveal">Your Products Deserve<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-tertiary">A Store That Wins</span></h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-10">While others in your space settle for average stores, you can own the category. One conversation. One store. The online presence your brand has always deserved — without the cost or complexity you feared.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="contact.html" class="w-full max-w-[280px] sm:w-auto px-10 py-4 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:bg-inverse-primary transition-all duration-300 font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-          Start a Project
+          Book a Free Call
           <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
         </a>
-        <a href="services.html" class="w-full max-w-[280px] sm:w-auto px-10 py-4 bg-white/5 border border-white/15 text-on-surface font-label-sm text-label-sm rounded-lg hover:bg-white/10 transition-all duration-300 font-bold uppercase tracking-wider">Explore Services</a>
+        <a href="portfolio.html" class="w-full max-w-[280px] sm:w-auto px-10 py-4 bg-white/5 border border-white/15 text-on-surface font-label-sm text-label-sm rounded-lg hover:bg-white/10 transition-all duration-300 font-bold uppercase tracking-wider">See Our Work</a>
       </div>
     </div>
   </div>
@@ -528,24 +568,23 @@
 </main>
 
 <!-- ═══════════════════════════════════════════════════ FOOTER ══ -->
-<footer class="w-full py-12 sm:py-16 md:py-20 bg-surface border-t border-white/5 mt-4 relative z-20">
+<footer class="w-full pt-12 pb-8 bg-surface border-t border-white/5 mt-4 relative z-20">
   <div class="max-w-7xl mx-auto px-6 md:px-8">
-    <div class="flex flex-col md:flex-row justify-between gap-12 mb-12">
+    <!-- Main footer grid -->
+    <div class="flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 mb-8">
       <!-- Brand -->
-      <div class="flex flex-col items-center md:items-start">
-        <div class="mb-6">
-          <svg viewBox="0 0 240 72" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-10 w-[133px]"><text x="0" y="36" dominant-baseline="middle" text-anchor="start" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="32" letter-spacing="-0.04em"><tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan></text></svg>
-        </div>
-        <p class="font-body-md text-body-md text-on-surface-variant max-w-xs text-center md:text-left mb-6">Bespoke Shopify development agency. Custom themes, migrations, headless storefronts, and conversion-focused integrations.</p>
-        <a class="text-body-md font-body-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2" href="https://www.instagram.com/ecomdev.mena/" target="_blank" rel="noopener noreferrer">
-          <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      <div class="flex flex-col items-center md:items-start gap-3 md:max-w-xs">
+        <svg viewBox="0 0 240 72" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-9 w-[120px]"><text x="120" y="36" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="32" letter-spacing="-0.04em"><tspan fill="#0070f3" font-weight="900">{</tspan><tspan fill="white"> ecomdev </tspan><tspan fill="#0070f3" font-weight="900">}</tspan></text></svg>
+        <p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left text-sm leading-relaxed">We build premium Shopify stores for product-based brands who refuse to look average online. Official Shopify Partner.</p>
+        <a class="text-body-md font-body-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2 mt-1" href="https://www.instagram.com/ecomdev.mena/" target="_blank" rel="noopener noreferrer">
+          <svg class="w-[16px] h-[16px] fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
           @ecomdev.mena
         </a>
       </div>
-      <!-- Links -->
-      <div class="flex flex-row md:flex-row gap-12 md:gap-16 justify-center">
+      <!-- Nav links — 2-col grid on mobile -->
+      <div class="flex flex-row gap-12 md:gap-16 justify-center">
         <div class="flex flex-col gap-3">
-          <p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-2">Pages</p>
+          <p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-1">Pages</p>
           <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">Home</a>
           <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="portfolio.html">Portfolio</a>
           <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="services.html">Services</a>
@@ -554,29 +593,30 @@
           <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="contact.html">Contact</a>
         </div>
         <div class="flex flex-col gap-3">
-          <p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-2">Services</p>
+          <p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-1">Services</p>
           <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="services.html#shopify">Core Shopify Dev</a>
           <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="services.html#headless">Headless Shopify</a>
-          <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="services.html#integrations">Shopify Integrations</a>
+          <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="services.html#integrations">Integrations</a>
           <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="services.html#pricing">Pricing Plans</a>
         </div>
       </div>
-      <!-- Contact CTA -->
-      <div class="glass-panel p-6 rounded-xl border border-white/5 text-center md:text-left w-full md:w-[280px] mx-auto md:mx-0">
-        <h3 class="font-label-sm text-label-sm text-on-surface mb-2 uppercase tracking-widest">Ready to Start?</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Let's discuss your project and build something great together.</p>
-        <a href="contact.html" class="w-full block px-5 py-3 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:bg-inverse-primary transition-all duration-300 font-bold uppercase tracking-wider text-center">Get In Touch</a>
+      <!-- CTA Card -->
+      <div class="glass-panel p-6 rounded-xl border border-white/5 text-center w-full max-w-[280px]">
+        <h3 class="font-label-sm text-label-sm text-on-surface mb-2 uppercase tracking-widest">Stop Waiting. Start Winning.</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Book a free 30-minute call. No hard sell — just clarity on what's possible for your brand.</p>
+        <a href="contact.html" class="w-full block px-5 py-3 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:bg-inverse-primary transition-all duration-300 font-bold uppercase tracking-wider text-center">Book Free Call</a>
       </div>
     </div>
-    <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="font-label-sm text-label-sm text-outline-variant uppercase tracking-widest">© 2026 ECOMDEV. All rights reserved.</div>
-      <div class="font-label-sm text-label-sm text-outline-variant uppercase tracking-widest">Powered by precision.</div>
+    <!-- Bottom bar -->
+    <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-center">
+      <span class="font-label-sm text-label-sm text-outline-variant uppercase tracking-widest">© 2026 ECOMDEV. All rights reserved.</span>
+      <span class="font-label-sm text-label-sm text-outline-variant uppercase tracking-widest">Official Shopify Partner</span>
     </div>
   </div>
 </footer>
 
 <!-- Mobile Bottom Nav -->
-<nav id="mobile-bottom-nav" class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container/95 backdrop-blur-xl border-t border-white/8 shadow-2xl flex justify-around items-center px-1 h-[60px]" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
+<nav id="mobile-bottom-nav" class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container/95 backdrop-blur-xl shadow-2xl flex justify-around items-center px-1 h-[60px]" style="padding-bottom: env(safe-area-inset-bottom, 0px); border-top: 1px solid rgba(0,112,243,0.18); box-shadow: 0 -12px 32px rgba(0,0,0,0.7), 0 -1px 0 rgba(0,112,243,0.12);">
   <a class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-3 py-2 duration-150 ease-out" href="index.html">
     <span class="material-symbols-outlined mb-1 text-[22px]" style="font-variation-settings: 'FILL' 1;">home</span>
     <span class="text-[9px] font-label-sm uppercase tracking-wide">Home</span>
@@ -602,6 +642,40 @@
 
 <script>
 
+// Hero — typewriter effect
+(function() {
+  const container = document.getElementById('hero-shimmer-text');
+  if (!container) return;
+  const words = ['More Than This'];
+  let wordIndex = 0;
+  const typeEl = document.createElement('span');
+  typeEl.className = 'hero-typewriter';
+  const caret = document.createElement('span');
+  caret.className = 'hero-caret';
+  container.textContent = '';
+  container.appendChild(typeEl);
+  container.appendChild(caret);
+
+  function typeWord(word, cb) {
+    let i = 0;
+    typeEl.textContent = '';
+    const interval = setInterval(() => {
+      typeEl.textContent += word[i];
+      i++;
+      if (i >= word.length) {
+        clearInterval(interval);
+        cb && cb();
+      }
+    }, 68);
+  }
+
+  // Start after first line fades in (~300ms)
+  setTimeout(() => {
+    typeWord(words[wordIndex], () => {
+      caret.classList.add('done');
+    });
+  }, 600);
+})();
 
 // Process scroll-reveal
 (function() {
